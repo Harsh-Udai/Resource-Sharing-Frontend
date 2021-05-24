@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+
+.main-part-1{
+    text-align: center;
+    
+    font-size: 500%;
+    margin: 50px;
+    margin-bottom: -100px;
+}
+.main-part-ANIME{
+    text-align: center;
+    
+    font-size: 500%;
+    
+}
+.split-2{
+    font-family: 'RocknRoll One', sans-serif;
+}
+.main-part-2{
+    display: flex;
+    justify-content:space-between;    
+    margin-left: 20vh;
+    margin-top: -30px;
+    animation: object 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes object {
+    from{
+        transform: translate(0,0px) ;
+    }
+    to{
+        transform: translate(0px,10px) ;
+    }
+}
+
+@keyframes object1 {
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    100%{
+        transform: translate(0px,60px) rotate(160deg);
+    }
+}
+
+.object-2{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    position:absolute;
+    right: 40vh;
+    top: 10vh;
+    animation: object1 3.5s ease-in infinite alternate;
+}
+
+@media only screen and (max-width: 939px) {
+    
+    .object-2{
+        display: none;
+    }
+    .hook{
+        display: none;
+    }
+}
+
+.text-part-2{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10vw;
+    margin-top: -100px;
+    font-size: 200%;
+    font-family: 'RocknRoll One', sans-serif;
+}
+@media only screen and (max-width: 1145px) {
+    
+    .text-part-2{
+        margin-top: auto;
+        text-align: center;
+        display: contents;
+    }
+}
+
+.texter-1{
+    font-size: 200%;
+    /* display: flex; */
+    text-align: center;
+    position:relative;
+    bottom: -190px;
+    font-family: 'Lexend', sans-serif;
+    
+    
+}
+.image-content{
+    margin-top: 20px;
+}
+.content-phase-2{
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+}
+@media only screen and (max-width: 954px) {
+    
+    .texter-1{
+        position:relative;
+        bottom: -80px;
+    }
+}
+
+.hook{
+    transform: rotate(40deg);
+    animation: object2 1.5s ease-in-out infinite alternate;
+}
+@keyframes object2 {
+    from{
+        transform: translate(0,0px) rotate(0deg);
+    }
+    to{
+        transform: translate(0px,10px) rotate(30deg);
+    }
+}

@@ -1,0 +1,136 @@
+.ProfileI{
+    display: flex;
+    justify-content: center;
+    
+    position: relative;
+    text-align: center;
+}
+.ProfileText{
+    width: 40px;
+    height: 40px;
+    background-color: red
+}
+.BackArrow{
+    padding-left: 20px;
+    margin-bottom: -20px;
+}
+.BackArrow:hover{
+    cursor: pointer;
+}
+.PCD{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.ProfileCard{
+    
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(
+        to right, 
+        #EC7063 0%, 
+        #EC7063 40%, 
+        #E5E7E9 40%, 
+        #E5E7E9 100%
+    );
+    border-radius: 5px;
+    
+}
+.NamePart{
+    font-family: 'Lexend', sans-serif;
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 7px;
+    
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 130%;
+    text-align: center;
+}
+.avatar{
+    margin-top: -50px;
+    margin-left: 47px;
+}
+.countP{
+    margin-top: -120px;
+    margin-left: 300px;
+}
+.NamePart1{
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 7px;
+    padding-bottom: 8px;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 130%;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+}
+.EmailTag{
+    margin-top: -260px;
+    margin-left: 315px;
+    font-family: 'Lexend', sans-serif;
+
+}
+.categ{
+    font-size: 130%;
+    font-family: 'Lexend', sans-serif;
+    padding-left: 360px;
+}
+
+@media only screen and (max-width: 596px) {
+    .ProfileCard{
+        width: 400px;
+        height: 200px;
+    }
+    .NamePart{
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90px;
+        font-size: 70%;
+    }
+    .NamePart1{
+        width: 80px;
+        font-size: 70%;
+    }
+    .avatar{
+        margin-top: -70px;
+        margin-left: 0px;
+    }
+    .countP{
+        margin-top: -150px;
+        margin-left: 200px;
+    }
+    .EmailTag{
+        margin-top: -190px;
+        margin-left: 150px;
+        font-family: 'Lexend', sans-serif;
+    
+    }
+    .categ{
+        padding-left:180px ;
+    }
+    .mapper{
+        padding-left:100px;
+        margin-top:-20px;
+    }
+}
+.mapper{
+    margin-left:-115px;
+    padding-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.sect-2{
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size:130%;
+}

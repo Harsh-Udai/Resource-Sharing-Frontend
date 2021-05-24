@@ -1,0 +1,68 @@
+.img-cen{
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.font1{
+    font-family: 'Lexend', sans-serif;
+}
+.img-text{
+    font-family: 'Lexend', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 190%;
+}
+.img-text1{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    color: black;
+    font-size: 190%;
+}
+.font{
+    font-family: 'Lexend', sans-serif;
+    font-size: 220%;
+    text-align: center;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+@media only screen and (max-width: 520px) {
+    
+    .img-cen img{
+        width: 100%;
+    }
+    
+}
+
+.DashCard{
+    width:300px;
+    height:400px;
+    background: linear-gradient(
+        to bottom, 
+        #82E0AA 0%, 
+        #82E0AA 60%, 
+        #E5E7E9 60%, 
+        #E5E7E9 100%
+    );
+    text-align: center;
+    align-items: center;
+}
+.buttonD{
+    padding: 10px;
+    border: none;
+    font-family: 'Lexend', sans-serif;
+    
+}
+.buttonP{
+    padding-top: 100px;
+}
+.buttonD:hover{
+    cursor: pointer;
+}

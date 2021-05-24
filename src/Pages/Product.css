@@ -1,0 +1,36 @@
+.imagePart{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 50px;
+}
+.head-1{
+    display: flex;
+    font-family: 'Lexend', sans-serif;
+    justify-content:center
+}
+.aligner{
+    display: flex;
+    justify-content:center
+}
+.headName{
+    width:500px;
+    height:200px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 220%;
+}
+.tesxter{
+    padding-left: 215px;
+    word-wrap: break-word;
+    margin-top: -200px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 180%;
+}
+.emailR{
+    padding-left:190px;
+    padding-top:50px
+}
+.majorP{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}

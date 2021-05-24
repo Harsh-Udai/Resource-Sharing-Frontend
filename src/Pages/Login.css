@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.MainLog{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.Login-text{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 200%;
+}
+.LoginForm{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 360px;
+    background-color: #F2F3F4;
+    
+    padding: 20px;
+    padding-left: 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.EmailPart{
+    width: 330px;
+    height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    border: 1.9px solid #E5E8E8;
+    margin-top: 10px;
+    font-size: 130%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.EmailPart:focus{
+    outline: none !important;
+    border: 1.6px solid #2E86C1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 130%;
+    
+}
+.subButton{
+    width: 410px;
+    height: 45px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 130%;
+    background-color: rgb(55, 112, 255);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    outline: none;
+}
+.subButton:hover{
+    cursor: pointer;
+    background-color: #143BE2;
+}
+.endPart{
+    margin-top: -20px;
+}

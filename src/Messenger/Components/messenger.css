@@ -1,0 +1,167 @@
+
+.mainPaper{
+    display: flex;
+    text-align: center;
+
+}
+
+.conversations{
+    flex: 4;
+    
+}
+
+.inputChat{
+    flex: 5.5;
+}
+
+.OnlinePeople{
+    flex: 2.5;
+    
+}
+.setF{
+    font-size: 150%;
+}
+.chatBox{
+    flex:5.5;
+}
+
+.chatBoxWrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.chatBoxTop{
+    height:478px;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+.chatBoxBottom{
+    margin-top: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+
+.convoSep{
+    display: flex;
+}
+.recent{
+    flex:3;
+    cursor: pointer;
+}
+.contact{
+    flex:3;
+    cursor: pointer;
+}
+.contact:hover{
+    background-color: aliceblue;
+    
+}
+.color{
+    background-color: aliceblue;
+}
+
+.recent:hover{
+    background-color: aliceblue;
+}
+.chatCurrent{
+    cursor:pointer;
+}
+
+
+/* Css of message */
+.message{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.messageTop{
+    display: flex;
+}
+
+.messageImg{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.messageText{
+    padding:10px;
+    border-radius:20px;
+    background-color: #1877f2;
+    color: white;
+    max-width: 300px;
+    font-size: 70%;
+    word-wrap: break-word;
+}
+
+.messageBottom{
+    font-size: 12px;
+    margin-top:-10px;
+    display: flex;
+}
+.message.own{
+    align-items:flex-end;
+}
+
+.message.own .messageText{
+    background-color: rgb(245,241,241);
+    color:black;
+}
+
+/* Input */
+.input_MM{
+    width:510px;
+    height:62px;
+    outline:none;
+    overflow: auto;
+    font-family: 'Lexend', sans-serif;
+    font-size: 100%;
+    padding-left: 15px;
+    border:none;
+    margin-right: 12px;
+    
+}
+
+.noConversationText{
+    margin-top: 200px;
+}
+
+@media only screen and (max-width: 996px) {
+    .input_MM{
+        width:350px;
+    }
+    .OnlinePeople{
+        display: none
+    }
+    .conversations{
+        flex:4
+    }
+    .inputChat{
+        flex:4
+    }
+    .mainPaper{
+        flex-wrap: wrap;
+    }
+   
+}
+@media only screen and (max-width: 723px) {
+    
+    .input_MM{
+        width:300px;
+    }
+}
+@media only screen and (max-width: 407px) {
+    
+    .input_MM{
+        width:150px;
+    }
+}

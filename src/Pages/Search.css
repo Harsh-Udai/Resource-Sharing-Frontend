@@ -1,0 +1,45 @@
+.textS{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 120%;
+}
+.inputS{
+    display: flex;
+    justify-content: center;
+}
+.inputTS{
+    width:400px;
+    height: 50px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 120%;
+    padding-left: 20px;
+    border:1px solid #D7DBDD;
+    margin-right: 1px;
+}
+.inputTS:focus{
+    outline: 1px solid #797D7F;
+}
+.inputTS1{
+    width: 100px;
+    height: 55px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 120%;
+    border: none;
+}
+.inputTS1:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 663px) {
+    
+    .inputTS{
+        width: auto;
+    }
+    
+}
+@media only screen and (max-width: 443px) {
+    
+    .inputTS{
+        width: 150px;
+    }
+    
+}

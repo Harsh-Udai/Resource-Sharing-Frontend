@@ -1,0 +1,8 @@
+export const SETUSER = 'SETUSER'
+export const UNSETUSER = 'UNSETUSER'
+export const PROFILE = 'PROFILE'
+export const CENTRAL = 'CENTRAL'
+export const NOTIFICATION = 'NOTIFICATION'
+export const ANIMATION = 'ANIMATION'
+export const CART = 'CART'
+export const REQUESTS = 'REQUESTS'

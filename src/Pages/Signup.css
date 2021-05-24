@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+/* .content{
+    
+    height: 620px;
+    background-color: #F4F6F6;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 87%,
+        0 calc(100%)
+    );
+} */
+.text-part{
+    font-size: 240%;
+    display: flex;
+    justify-content: left; 
+    margin-left: 10vw;
+    font-family: 'Lexend', sans-serif;
+}
+.page-setter{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 731px) {
+    
+    .text-part{
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+    }
+}
+/*#ABEBC6 #F4F6F6*/
+
+.formMajor{
+    margin-top: 100px;
+}
+.formMajor-1{
+    margin-top: 0px;
+}
+
+.formPart{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 360px;
+    background-color: #F2F3F4;
+    
+    padding: 20px;
+    padding-left: 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+    
+}
+.emailField{
+    width: 330px;
+    height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    border: 1.9px solid #E5E8E8;
+    margin-top: 10px;
+    font-size: 130%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.errorPart{
+    width: 330px;
+    height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    border: 1.9px solid red;
+    margin-top: 10px;
+    font-size: 130%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.errorPart:focus{
+    outline: none !important;
+    border: 1.6px solid red;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 130%;
+    
+}
+
+.emailField:focus{
+    outline: none !important;
+    border: 1.6px solid #2E86C1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 130%;
+    
+}
+.submitButton{
+    width: 410px;
+    height: 45px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 130%;
+    background-color: rgb(55, 112, 255);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    outline: none;
+}
+.submitButton:hover{
+    cursor: pointer;
+    background-color: #143BE2;
+}
+
+@media only screen and (max-width: 520px) {
+    
+    .page-setter{
+        position:absolute;
+        justify-content: center;
+    }
+    
+}

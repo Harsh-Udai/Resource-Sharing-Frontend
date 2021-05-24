@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+
+
+/* ///////////////////////////////////////////////// */
+
+.Chat-Input_s{
+    width:620px;
+    height:62px;
+    outline:none;
+    overflow: auto;
+    font-family: 'Lexend', sans-serif;
+    font-size: 140%;
+    padding-left: 15px;
+    border:none;
+    margin-right: 12px;
+}
+@media only screen and (max-width: 723px) {
+    
+    .Chat-Input_s{
+        width:300px;
+    }
+}
+@media only screen and (max-width: 407px) {
+    
+    .Chat-Input_s{
+        width:220px;
+    }
+}
+
+.Chat-Head{
+    margin-top:15px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 170%;
+    color:'#839192'
+}
+.ChatmsgBound{
+   width:'400px';
+   height:'200px';
+   background-color: red;
+    
+}
