@@ -8,21 +8,13 @@ import {Redirect} from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Reset = ()=>{
-    // const [open, setOpen] = React.useState(false);
-
+    
     const [state, setState] = React.useState({
         open: false,
         vertical: 'bottom', //bottom
         horizontal: 'left', //left
-      });
-      const { vertical, horizontal, open } = state;
-
-
-    // const handleClick = () => {
-    //     setState({...state,open:true});
-    // };
-    
-    
+    });
+    const { vertical, horizontal, open } = state;
 
     const handleClose = (event, reason) => {
       if (reason === 'clickaway') {
@@ -39,16 +31,12 @@ const Reset = ()=>{
     const [passER,setpassER] = useState(false);
     const [redir,setredir] = useState(false);
     const [prog,setProg] = useState(false);
-
     const [email,setEmail] = useState('');
     const [otp, setOtp] = useState('');
     const [otpB, setotpB] = useState('');
     const [newPass,setnewPass] = useState('');
-
     const [dis, setDis] = useState(false);
     const [dis1,setDis1] = useState(false);
-
-    
     const [count, setCount] = useState(0);
 
     const updateState = (e)=>{
@@ -152,13 +140,7 @@ const Reset = ()=>{
     }
     else{
 
-    
-
-
     return(
-
-        
-
         <div>
             <div>
                 <Navbar />

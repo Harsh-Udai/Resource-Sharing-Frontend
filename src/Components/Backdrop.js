@@ -12,12 +12,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleBackdrop(props) {
   const classes = useStyles();
-  
-  
-
   return (
     <div>
-      
       <Backdrop className={classes.backdrop} open={props.start} >
         <CircularProgress color="inherit" />
       </Backdrop>

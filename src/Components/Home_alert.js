@@ -7,14 +7,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {Link} from 'react-router-dom';
 
-
-
-
 export default function ResponsiveDialog() {
   const [open, setOpen] = React.useState(false);
   
-  
-
   const handleClickOpen = () => {
     setOpen(true);
   };

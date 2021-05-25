@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import Image1 from '../Assets/gift.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MiddleDividers(props) {
   const classes = useStyles();
-  console.log(props);
+  
   return (
     <div className={classes.root}>
       <div className={classes.section1}>
@@ -41,7 +42,6 @@ export default function MiddleDividers(props) {
               {<span className='font1'>{props.name}</span>}
             </Typography>
           </Grid>
-          
         </Grid>
         <Typography color="textSecondary" variant="body2">
             <Chip className={classes.chip} color="primary" label={<span className='font1'>{props.email}</span>} />
@@ -51,6 +51,9 @@ export default function MiddleDividers(props) {
       <div className={classes.section3} >
         {props.approve==='NO' ? <div><Button color='primary'>Status : Pending</Button></div> : 
         <Button color={props.approve==='Accepted' ? 'primary' : 'secondary'}>Status : {props.approve==='Accepted' ? 'Accepted' : 'Rejected'} </Button>}
+        <div style={{display:'flex',justifyContent:'center',marginTop:'-40px',marginLeft:'30px'}}>
+          {props.approve==='Accepted' ?<img width="10%" alt="." src={Image1} /> :null}
+        </div>
       </div>
     </div>
   );

@@ -8,8 +8,6 @@ import SocketIO from 'socket.io-client';
 
 
 const Entry = (props)=>{
-    
-    
     const decode=(arrf)=>{
         let s= '';
         for (let i=0;i<arrf.length;i++){
@@ -18,10 +16,8 @@ const Entry = (props)=>{
         return s;
     }
     
-
     if(props.main.master_user.user===''){
         const hmm1 = JSON.parse(sessionStorage.getItem('!@#$%^&*()_+'));
-        
         
         if(hmm1!==null){
             const kk = {name:decode(hmm1.milestone),init_token:hmm1.milestone1,_id:hmm1.milestone2}
@@ -32,24 +28,18 @@ const Entry = (props)=>{
         else{
             return <Redirect push to='/Login' />
         }
-        
     }
     
-   
     return(
         <div>
             <div style={{display: props.main.master_user.animate ? 'block' : 'none'}}>
                 <Animation />
             </div>
             <div className="Entry" style={{display: !props.main.master_user.animate ? 'block' : 'none'}}>
-                
                 <Navbar2 />
                 <Section />
-                
-
             </div>
         </div>
-        
     )
 }
 

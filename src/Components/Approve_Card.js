@@ -32,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MiddleDividers(props) {
-  console.log(props);
-
+  
   const classes = useStyles();
   const [oEr2,setOE2] = useState(false);
   const handleCancel = ()=>{
@@ -90,17 +89,13 @@ export default function MiddleDividers(props) {
         <Grid container alignItems="center">
           <Grid item xs>
             <Typography gutterBottom variant="h4">
-              
               {<span className='font1'>{props.name}</span>}
             </Typography>
           </Grid>
-          
         </Grid>
         <Typography color="textSecondary" variant="body2">
             <Chip className={classes.chip} color="primary" label={<span className='font1'>{props.email}</span>} />
-           
         </Typography>
-        
       </div>
       <Divider variant="middle" />
       <div className={classes.section3} >

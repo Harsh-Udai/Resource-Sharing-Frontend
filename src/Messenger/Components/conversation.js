@@ -26,7 +26,6 @@ export default function InsetDividers({conversation,currentUser}) {
     
       const getUser = async()=>{
         try{
-            console.log("friendID",friendId)
             const res = await axios.get("http://localhost:5000/api/messages/findUser/"+ friendId);
             setUser(res.data);
             setZero(1);

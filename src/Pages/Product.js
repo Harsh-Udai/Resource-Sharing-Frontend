@@ -1,13 +1,9 @@
 import React,{ useState,useEffect} from 'react';
-
 import Navbar2 from '../Containers/Navbar2Container';
 import imageP from '../Assets/Simple Shiny.svg';
-
 import Typography from '@material-ui/core/Typography';
 import Accordion from '@material-ui/core/Accordion';
-
 import AccordionDetails from '@material-ui/core/AccordionDetails';
-
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
@@ -18,7 +14,6 @@ import List from '../Components/List';
 import BottomNav from '../Containers/BottomContainer';
 import {Redirect} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,15 +57,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Product = (props)=>{
     const classes = useStyles();
-    
-
     const [image,setImage] = useState('');
-    
     const [email,setEmail] = useState('');
     const [desc,setDesc] = useState('');
-
     const [classC,setClass] = useState('');
-
     const [owner,setOwner] = useState('');
     const [queue,setOueue] = useState([]);
     const [price,setPrice] = useState('');
@@ -79,7 +69,6 @@ const Product = (props)=>{
     const [smallI,setSMI] = useState('');
     const [effP,setEP] = useState(0);
     const [sold,setSold] = useState('');
-
     const [prog,setProg] = useState(true);
 
     useEffect(()=>{
@@ -117,8 +106,6 @@ const Product = (props)=>{
                 console.log(e);
             })
         }
-        
-
             return () => {
                 abortController.abort();
             };
@@ -127,7 +114,6 @@ const Product = (props)=>{
     if(props.main.master_user.user===''){
         return <Redirect to='/UI' />
     }
-
      
     return(
         <div>
@@ -258,8 +244,3 @@ const Product = (props)=>{
 }
 
 export default Product;
-
-//console.log(props);
-    // // console.log(state);
-    // console.log(props.match.params.id);
-    // console.log(props.location.state.email,props.main.master_user.email) // props.main.master_user.email

@@ -17,7 +17,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 const axios = require('axios').default;
 
-
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -129,12 +128,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ResourceUpload = (props)=>{
     
-  const refe = React.createRef();
-
+    const refe = React.createRef();
     const  vertical = 'bottom';
     const horizontal = 'left';
-    
-
     const handleClose1 = (event, reason) => {
       if (reason === 'clickaway') {
         return;
@@ -154,24 +150,22 @@ const ResourceUpload = (props)=>{
     const [currency, setCurrency] = React.useState('Project');
     const handleChange = (event) => {
         setCurrency(event.target.value);
-      };
+    };
 
-      const [loading, setLoading] = React.useState(false);
-      const [success, setSuccess] = React.useState(false);
-      
-      const buttonClassname = clsx({
-        [classes.buttonSuccess]: success,
-      });
+    const [loading, setLoading] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
     
-      
+    const buttonClassname = clsx({
+      [classes.buttonSuccess]: success,
+    });
+  
     
-      const handleButtonClick = (e) => {
-        if (!loading) {
-          
-          
-          formApplyR(e)
-        }
-      };
+  
+    const handleButtonClick = (e) => {
+      if (!loading) {
+        formApplyR(e)
+      }
+    };
 
       /*
       
@@ -182,14 +176,10 @@ const ResourceUpload = (props)=>{
       const owner = (props.main.master_user.user);
       const [Resource_name, setRN] = useState('');
       const [Resource_desc, setRD] = useState('');
-      
       const [image, setImage] = useState('');
-
-
       // Error part
       const [re_name_er, setRNE] = useState(false);
       const [re_dec_er, setRDE] = useState(false);
-      
       const [formER, setFER] = useState(false);
       const [succ,setS] = useState(false);
       // Creative part
@@ -277,9 +267,6 @@ const ResourceUpload = (props)=>{
           }
   
         }
-        
-        
-        
       }
 
       const formApplyR = (e)=>{
@@ -325,17 +312,8 @@ const ResourceUpload = (props)=>{
                 setS(false);
                 
           });  
-
         }
-
-         
-        
-
       }
-
-    
-
-
       /*
       
       Work of BAckend --------------------------------------------------------------------------------------------------
@@ -344,12 +322,9 @@ const ResourceUpload = (props)=>{
 
       //console.log(props);
 
-
     return(
         <div >
-           
             <div className="decor">
-
               </div>
             <div>
                 <div >
@@ -526,11 +501,7 @@ const ResourceUpload = (props)=>{
                       </Alert>
                     </Snackbar>
                 </div>
-                
             </div>
-            
-                
-            
         </div>
     )
 }

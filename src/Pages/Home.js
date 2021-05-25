@@ -11,9 +11,6 @@ import './Home.css';
 const Home = (props) => {
     
     const wrapper = React.createRef();
-
-    
-
     return(
         <div ref={wrapper}>
             <div>
@@ -70,8 +67,6 @@ const Home = (props) => {
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>

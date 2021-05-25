@@ -18,14 +18,9 @@ const useStyles = makeStyles({
 
 export default function ImgMediaCard(props) {
   const classes = useStyles();
-
-
   const [Draw,setDraw] = useState(false);
-
   const DrawMagic = ()=>{
-    
     setDraw( true)
-    
   }
 
   return (
@@ -48,7 +43,6 @@ export default function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions style={{display:'flex',justifyContent:'center'}}>
-        
         {Draw ? <Drawer danger={props.danger} check={Draw} Change={setDraw} Name={props.name} /> : null}
           <Button size="small" color="primary" onClick={DrawMagic}>
             Update

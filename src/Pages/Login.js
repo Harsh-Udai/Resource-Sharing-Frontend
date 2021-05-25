@@ -9,10 +9,8 @@ import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 import SocketIO from 'socket.io-client';
 
-
 export default function Login(props){
     
-        
     const [email,setEmail] = useState("");
     const [emailErr,setEmailErr] = useState(false);
     const [password, setPassword] = useState('');
@@ -77,13 +75,9 @@ export default function Login(props){
                 }
                 else{
                     //setPage(true);
-                    
                     setaccountErr(false);
                     props.setuser(data.data)
-                            
                     sessionStorage.setItem('!@#$%^&*()_+',JSON.stringify({milestone: encode(data.data.name),milestone1: data.data.init_token,milestone2: data.data._id }));
-                       
-
                     props.setNotifications({
                         socket:SocketIO('http://localhost:5000',{
                             withCredentials: true,
@@ -97,19 +91,12 @@ export default function Login(props){
                 console.log(e);
                 setProg(false);
             })
-
         }
-
     }
     
     if(page_change){
         return <Redirect push  to='/UI' />
     }
-    
-    
-
-    
-
     return(
         <div className="Login">
             <div>

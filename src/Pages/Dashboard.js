@@ -101,8 +101,6 @@ const Dashboard = (props)=>{
                     <div>
                         <div className="cards">
                             {image.map((img,index)=>{
-                                
-                               
                                 return(
                                     <div key={index} style={{margin:'40px',marginBottom:'220px',width:'300px',height:'400px'}}>
                                         
@@ -115,7 +113,6 @@ const Dashboard = (props)=>{
                     </div> }
                 </div>
                 <BackDrop start={back}/>
-                
                 <Footer />
             </div>
         </div>

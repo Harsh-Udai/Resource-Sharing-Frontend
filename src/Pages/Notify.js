@@ -102,12 +102,9 @@ export default function Notify(props){
 
     //Error states
     const [ButtonE, setBE] = useState(false);
-
     const classes = useStyles();
-
     const Userval = (e)=>{
         setD(e.target.value);
-        
     }
     var today = new Date();
     function formatAMPM(date) {
@@ -161,16 +158,6 @@ export default function Notify(props){
     
     useEffect(()=>{
         const abortController = new AbortController();
-        // socket = SocketIO(uri,{
-        //     withCredentials: true,
-        // });
-       
-        
-        // props.main.master_user.socket.on('DataE',data => {
-            
-        //     setData(data);
-        // })
-
         axios.get('http://localhost:5000/MSG')
         .then((data)=>{
           setData(data.data);
@@ -231,7 +218,6 @@ export default function Notify(props){
                 </div>
                 <div className={classes.root_3}>
                     <Paper elevation={2} >
-                        
                         <div className="Chat-Input" style={{display:show}}>
                             <form onSubmit={(e)=>MSG_event(e)}>
                                 <input onChange={Userval} className="Chat-Input_s" value={user} type="text" placeholder="Type here ..."></input>
@@ -239,10 +225,7 @@ export default function Notify(props){
                                     <SendRoundedIcon />
                                 </Fab>
                             </form>
-                            
                         </div>
-                            
-                        
                     </Paper>
                 </div>
            </Paper>

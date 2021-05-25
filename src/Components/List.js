@@ -21,10 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AlignItemsList(props) {
   const classes = useStyles();
-  
   return (
     <List className={classes.root} >
-      
         { props.queue.length > 0 ?  props.queue.map((dt,ind)=>{
           return(
             <div key={ind}>
@@ -64,8 +62,6 @@ export default function AlignItemsList(props) {
           </div>
           )
         }): <div style={{textAlign:'center',fontFamily:'Lexend',marginLeft:'40px'}}><h1>Nothing !</h1></div>}
-        
-      
     </List>
   );
 }

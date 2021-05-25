@@ -55,11 +55,8 @@ export default function Chat() {
                     </Paper>
                 </div>
                 <div style={{marginTop:'1px'}} className="decor">
-
                 </div>
                 <div style={{display:'flex',justifyContent:'center',marginTop:'100px'}}>
-                    
-              
                     <Card />
                 </div>
             </Paper>

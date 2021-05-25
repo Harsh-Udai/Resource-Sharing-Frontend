@@ -8,6 +8,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -52,12 +53,9 @@ export default function CustomizedDialogs(props) {
   
     const handleClose = ()=>{
         props.stop();
-        
         if(props.setter!==undefined){
           props.setter();
         }
-        
-        
     }
 
   return (
@@ -74,8 +72,6 @@ export default function CustomizedDialogs(props) {
           </Typography>
         </DialogContent>
         <DialogActions>
-          
-          
             <Button autoFocus onClick={handleClose} color="primary">
               Okay
             </Button>

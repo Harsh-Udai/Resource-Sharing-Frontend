@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function AlignItemsList(props) {
   const classes = useStyles();
   
@@ -30,23 +29,17 @@ export default function AlignItemsList(props) {
           
         </ListItemAvatar>
         <ListItemText
-          
           primary={props.name + " "+ props.date.split("??")[0]+" "+props.date.split("??")[1]}
           secondary={
-            
               <Typography
                 color="textPrimary"
                 style={{overflow: 'auto',wordWrap: 'break-word',color:'#717D7E'}}
               >
                 {props.msg}
               </Typography>
-              
-            
           }
         />
       </ListItem>
-      {/* <Divider variant="inset" component="li" /> */}
-      
     </List>
   );
 }

@@ -17,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         minHeight:'670px'
       },
-      
-
     },
 }));
   
@@ -52,7 +50,6 @@ export default function Cart(props){
     useEffect(()=>{
         const abortController = new AbortController();
         
-
         if(hook===0){
             setter();
         }
@@ -83,8 +80,6 @@ export default function Cart(props){
             {/* #222831 */}
                 
                 {prog && redata.length>0 ?<div><Backdrop start={prog} /></div>:null }
-                
-
                     <div className="img-text1">
                         <h1 style={{fontSize:'150%'}}>Cart!</h1>
                     </div>
@@ -103,9 +98,6 @@ export default function Cart(props){
                     }
 
                     </div>
-
-                    
-
                 </Paper>
             </div>
         </div>

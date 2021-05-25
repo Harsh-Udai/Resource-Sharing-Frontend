@@ -1,10 +1,6 @@
 import './App.css';
 import Home from './Containers/HomeContainer';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signup from './Pages/Signup';
 import Login from './Containers/LoginContainer';
 import Reset from './Pages/Reset';
@@ -17,11 +13,11 @@ import Anime  from './Pages/Animation';
 import Cart from './Containers/CartContainer';
 import Requests from './Containers/RequestContainer';
 import Mess from './Containers/messageContainer';
+import Error from './Pages/Error';
 
 function App() {
   return (
     <div>
-      
       <Router>
         <Switch>
           <Route exact path='/' component={Home} />
@@ -37,6 +33,7 @@ function App() {
           <Route exact path='/UI/Product/:id' component={Product} />
           <Route exact path='/AI' component={Anime} />
           <Route exact path='/UI/messenger' component={Mess} />
+          <Route component={Error} />
         </Switch>
       </Router>
     </div>

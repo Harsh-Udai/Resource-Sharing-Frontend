@@ -74,7 +74,6 @@ export default function PrimarySearchAppBar(props) {
   
   const [open, setOpen] = React.useState(false);
   
-  
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -91,7 +90,6 @@ export default function PrimarySearchAppBar(props) {
     setOpen(false);
     
   };
-
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -271,10 +269,7 @@ export default function PrimarySearchAppBar(props) {
               <Avatar style={{backgroundColor:'#28B463'}}>H</Avatar>
               
             </IconButton>
-            
-              
-            
-            
+         
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

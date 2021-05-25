@@ -142,100 +142,86 @@ const ResourceUpload = (props)=>{
     setresQ(e.target.checked);
   }
     
-    useEffect(()=>{
-      const abortController = new AbortController();
-        
-      if(cc===0){
-        axios.post('http://localhost:5000/ResourceFindUpdate',({
-          Name:props.Name,
-          Email:props.main.master_user.email,
-          unique_id:props.unique_id
-        }),{
-          headers:{
-              'Authorization': `Bearer ${props.main.master_user.token}`
-          }
-        })
-        .then((data)=>{
-          setCC(1);
-          setUID(data.data.unique_id)
-          
-          setLoaded(false)
-          setOrgName(data.data.name)
-          setRN(data.data.name)
-          setRD(data.data.desc)
-          setCurrency(data.data.classification)
-          setImageBack(data.data.image);
-          if(data.data.borrow){
-            setBER(data.data.borrow)
-            setINDIS(true);
-          }
-          else{
-            setPrice(data.data.price);
-            setBER1(true);
-          }
-          
-        })
-        .catch((er)=>{
-          console.log(er);
-        })
-      }
+  useEffect(()=>{
+    const abortController = new AbortController();
       
-
-      return () => {
-        abortController.abort();
-    };
-
-    })
-
-    
-    
-    const refe = React.createRef();
-
-    const  vertical = 'bottom';
-    const horizontal = 'left';
-    
-
-    const handleClose1 = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setFER(false);
-    };
-    const handleClose2 = (event, reason) => {
-      if (reason === 'clickaway') {
-        
-        return;
-      }
-  
-      setS(false);
-      
-      closer();
-
-    };
-
-    const classes = useStyles();
-    const [currency, setCurrency] = React.useState('Project');
-    const handleChange = (event) => {
-        setCurrency(event.target.value);
-      };
-
-      const [loading, setLoading] = React.useState(false);
-      const [success, setSuccess] = React.useState(false);
-      
-      const buttonClassname = clsx({
-        [classes.buttonSuccess]: success,
-      });
-    
-      
-    
-      const handleButtonClick = (e) => {
-        if (!loading) {
-          
-          
-          formApplyR(e)
+    if(cc===0){
+      axios.post('http://localhost:5000/ResourceFindUpdate',({
+        Name:props.Name,
+        Email:props.main.master_user.email,
+        unique_id:props.unique_id
+      }),{
+        headers:{
+            'Authorization': `Bearer ${props.main.master_user.token}`
         }
-      };
+      })
+      .then((data)=>{
+        setCC(1);
+        setUID(data.data.unique_id)
+        
+        setLoaded(false)
+        setOrgName(data.data.name)
+        setRN(data.data.name)
+        setRD(data.data.desc)
+        setCurrency(data.data.classification)
+        setImageBack(data.data.image);
+        if(data.data.borrow){
+          setBER(data.data.borrow)
+          setINDIS(true);
+        }
+        else{
+          setPrice(data.data.price);
+          setBER1(true);
+        }
+        
+      })
+      .catch((er)=>{
+        console.log(er);
+      })
+    }
+    
+
+    return () => {
+      abortController.abort();
+  };
+
+  })
+
+    
+    
+  const refe = React.createRef();
+  const  vertical = 'bottom';
+  const horizontal = 'left';
+  const handleClose1 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setFER(false);
+  };
+  const handleClose2 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setS(false);
+    closer();
+  };
+
+  const classes = useStyles();
+  const [currency, setCurrency] = React.useState('Project');
+  const handleChange = (event) => {
+      setCurrency(event.target.value);
+    };
+
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const buttonClassname = clsx({
+    [classes.buttonSuccess]: success,
+  });
+  const handleButtonClick = (e) => {
+    if (!loading) {
+      formApplyR(e)
+    }
+  };
 
       /*
       
@@ -246,14 +232,10 @@ const ResourceUpload = (props)=>{
       const owner = (props.main.master_user.user);
       const [Resource_name, setRN] = useState('');
       const [Resource_desc, setRD] = useState('');
-      
       const [image, setImage] = useState('');
-
-
       // Error part
       const [re_name_er, setRNE] = useState(false);
       const [re_dec_er, setRDE] = useState(false);
-      
       const [formER, setFER] = useState(false);
       const [succ,setS] = useState(false);
       // Creative part
@@ -273,7 +255,6 @@ const ResourceUpload = (props)=>{
         else{
           setPrice(e.target.value)
           setBER1(true);
-          
         }
       }
 
@@ -357,16 +338,10 @@ const ResourceUpload = (props)=>{
 
 
         }
-      }
-      
-
-        
+      }       
       }
 
       const [imageUrl, setURL] = useState('');
-      
-
-
       const formApplyR = (e)=>{
         e.preventDefault();
           setSuccess(false);
@@ -422,15 +397,7 @@ const ResourceUpload = (props)=>{
           });  
 
         }
-
-         
-        
-
       }
-
-    
-
-
       /*
       
       Work of BAckend --------------------------------------------------------------------------------------------------
@@ -441,13 +408,9 @@ const ResourceUpload = (props)=>{
         return props.closer(false)
       }
    
-
-
     return(
         <div >
-           
             <div className="decor">
-
               </div>
             <div>
                 <div >
@@ -576,11 +539,7 @@ const ResourceUpload = (props)=>{
                                 <div style={{paddingTop:'7px'}}>
                                   <TextField disabled={inputDis} value={price} onChange={(e)=>PriceData(e)} id="outlined-basic" type="number" label="Set Price" variant="outlined" />
                                 </div>
-
-                                
                             </div>
-
-
                             <br></br>
                             <div>
                               {imageUrl==='' ? <img alt="taggg-1" src={`data:image/png;base64,`+new Buffer.from(imageBack).toString("base64")} /> : null}
@@ -588,7 +547,6 @@ const ResourceUpload = (props)=>{
                              
                             </div>
                             <br></br>
-                            
                             <div ref={refe}>
                                 <div className={classes.root1} >
                                     <div className={classes.wrapper}>
@@ -607,20 +565,15 @@ const ResourceUpload = (props)=>{
                                         <Button
                                         variant="outlined"
                                         color="Default"
-                                        
                                         onClick={handleButtonClick}
                                         style={{marginRight:'10px'}}
                                         >
                                         Update 
                                         </Button>
-                                        
                                         <Button variant="outlined" color="default" onClick={closer}>Close</Button>
-                                        
                                     </div>
                                 </div>
                             </div>
-                            
-
                           </div>
                         </form>
                     </div>
@@ -630,7 +583,6 @@ const ResourceUpload = (props)=>{
                       open={notiImg}
                       ref={refe}
                       autoHideDuration={6000}
-                      
                       message={msg}
                       key={vertical + horizontal}
                     />
@@ -647,11 +599,7 @@ const ResourceUpload = (props)=>{
                       </Alert>
                     </Snackbar>
                 </div>}
-                
-            </div>
-            
-                
-            
+            </div> 
         </div>
     )
 }

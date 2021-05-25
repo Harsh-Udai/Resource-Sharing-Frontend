@@ -262,9 +262,14 @@ export default function Messenger(props) {
             open: false,
         });
 
+        console.log("Conversations",conversations);
+        console.log("data to be added",data)
+
         const mk = conversations.filter((dt)=>{
-           return dt.members[0]===user._id && dt.members[1]===data._id
+           return (dt.members[0]===user._id && dt.members[1]===data._id) || (dt.members[1]===user._id && dt.members[0]===data._id)
         })
+
+        console.log(mk);
 
         if(mk.length===1){
             setCurrentChat(mk[0]);

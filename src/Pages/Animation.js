@@ -1,7 +1,5 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
-
 export default function Animation(){
     return(
         <div className="main-part-ANIME" style={{position:'fixed',top:'40%',left:'50%',transform:'translate(-50%,-50%)'}}>

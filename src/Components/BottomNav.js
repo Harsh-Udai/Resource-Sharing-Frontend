@@ -18,19 +18,14 @@ const useStyles = makeStyles({
 
 export default function SimpleBottomNavigation(props) {
   const classes = useStyles();
-
-  
-
   const [oEr,setOE] = useState(false);
   const [oEr1,setOE1] = useState(false);
   const [oEr2,setOE2] = useState(false);
   const [oEr3,setOE3] = useState(false);
   const [oEr4,setOE4] = useState(false);
   const [value, setValue] = React.useState('');
-
   const add_cart = ()=>{
       
-
       axios.post('http://localhost:5000/cart/add',{
         self_user:props.main.master_user.email,
         resource_name:props.cart_data.re_name,
@@ -60,10 +55,8 @@ export default function SimpleBottomNavigation(props) {
     
     if(props.cart_data.owner_email===props.main.master_user.email){
       setOE(true);
-      
     }
     else{
-     
       setOE3(true);
       if(props.cart_data.sold==='SOLD'){
         setOE4(true);
@@ -79,10 +72,8 @@ export default function SimpleBottomNavigation(props) {
     
     if(props.cart_data.owner_email===props.main.master_user.email){
       setOE(true);
-      
     }
     else{
-      
       setOE3(true);
       if(props.cart_data.sold==='SOLD'){
         setOE4(true);
@@ -91,7 +82,6 @@ export default function SimpleBottomNavigation(props) {
       else{
         add_cart();
       }
-      
     }
   }
 
@@ -122,7 +112,6 @@ export default function SimpleBottomNavigation(props) {
     >
       <BottomNavigationAction onClick={Handle_Buy} label="Buy" icon={<ShopTwoIcon />} />
       <BottomNavigationAction onClick={Handle_Cart} label="Add to Cart" icon={<AddShoppingCartIcon />} />
-      
       <Backdrop start={oEr3} stop={stopper3} />
       <AlertD text={'You Already Own this Resource!'} image={alert1} start={oEr} stop={stopper} />
       <AlertD text={'Added to Cart!'} image={alert2} start={oEr1} stop={stopper1} />

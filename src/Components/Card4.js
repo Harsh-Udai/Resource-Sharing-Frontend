@@ -41,17 +41,14 @@ export default function MiddleDividers(props) {
               <span className="font1" style={{textAlign:'center',backgroundColor:'#F7DC6F', color:'white',paddingLeft:'10px',paddingRight:'10px'}}>Welcome to Chat Section :)</span>
             </Typography>
           </Grid>
-          
         </Grid>
         <Typography color="textSecondary" variant="body2">
           <span className="font1" style={{fontSize:'120%',backgroundColor:'#2C3E50',color:'white',padding:'5px'}}>Communication is a key tool.</span>
         </Typography>
       </div>
       <Divider variant="middle" />
-      
       <div className={classes.section3}>
           <Link to="/UI/messenger" style={{textDecoration:'none'}}> <Button style={{color:'#17202A',backgroundColor:'#F4F6F6'}} onClick={props.findF}>Open Chat App</Button></Link>
-       
       </div>
     </div>
   );

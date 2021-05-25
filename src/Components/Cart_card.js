@@ -10,11 +10,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import AlertD from './Alert_Dialog';
 import alert1 from '../Assets/alert3.svg';
-
 import axios from 'axios';
-
 import LinearProgress from '@material-ui/core/LinearProgress';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     
   },
   section2: {
-   
     margin: theme.spacing(0.5),
   },
   section3: {
@@ -52,7 +48,6 @@ export default function MiddleDividers(props) {
   useEffect(()=>{
     const abortController = new AbortController();
     
-
     if(hook===0){
         axios.post('http://localhost:5000/ResourceFind',{
             name:props.name,
@@ -70,11 +65,9 @@ export default function MiddleDividers(props) {
             }
             else{
               setImage(data.data.image.data)
-              
               setPrice(data.data.Price);
               setBorrow(data.data.borrow);
             }
-           
             setProg(false);
             props.closer();
         })
@@ -85,7 +78,6 @@ export default function MiddleDividers(props) {
     return () => {
         abortController.abort();
     };
-
 })
 
   const remove_Handle = ()=>{
@@ -113,9 +105,7 @@ export default function MiddleDividers(props) {
   }
 
   const deal_Handle = ()=>{
-    console.log('Hello World');
       props.anim();
-
       axios.post('http://localhost:5000/cart/update',{
         email:props.main.master_user.email,
         unique_id:props.unique_key
@@ -125,8 +115,7 @@ export default function MiddleDividers(props) {
       }
       })
       .then((data)=>{
-        
-        
+              
       })
       .catch((e)=>{
         console.log(e);
@@ -165,8 +154,7 @@ export default function MiddleDividers(props) {
           'Authorization': `Bearer ${props.main.master_user.token}`
       }
       })
-      .then((data)=>{
-       
+      .then((data)=>{      
         // props.setter();
         props.closer();
         setOE2(true);
@@ -174,12 +162,12 @@ export default function MiddleDividers(props) {
       })
       .catch((e)=>{
         console.log(e);
-      })
-      
+      })     
   }
 
   const stopper2 = ()=>{
     setOE2(false);
+    deal_Handle();
   }
 
   if(error){
@@ -217,8 +205,7 @@ export default function MiddleDividers(props) {
     <div className={classes.section2}>
       
         <div style={{display:'flex',justifyContent:'center'}}>
-          <Link push="true" style={{textDecoration:'none'}}  to={{pathname:`/UI/Product/${props.name}`,state:{email:props.owner,unique_id:props.unique_key}}} ><Button color="primary">View Details</Button></Link>
-          
+          <Link push="true" style={{textDecoration:'none'}}  to={{pathname:`/UI/Product/${props.name}`,state:{email:props.owner,unique_id:props.unique_key}}} ><Button color="primary">View Details</Button></Link>     
         </div>
     </div>
       <Divider variant="middle" />

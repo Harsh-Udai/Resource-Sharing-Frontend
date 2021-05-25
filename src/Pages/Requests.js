@@ -18,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
           width: '85vw',
           minHeight:'670px'
         },
-      
-
     },
 }));
   
@@ -27,15 +25,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Cart(props){
 
-    console.log(props);
-
     const classes = useStyles();
-
     const [hook,setHk] = useState(0);
     const [pending,setPend] = useState([]);
     const [approve,setAPR] = useState([]);
     const [prog,setProg] = useState(true);
-
     const dataR = ()=>{
         setProg(true)
         axios.post('http://localhost:5000/request/data',{
@@ -59,8 +53,6 @@ export default function Cart(props){
 
     useEffect(()=>{
         const abortController = new AbortController();
-        
-
         if(hook===0){
             dataR();
         }
@@ -77,21 +69,17 @@ export default function Cart(props){
     return(
         <div>
             <Navbar2 />
-            
             <div style={{display:'flex',justifyContent:'center'}}>
                 <div className={classes.root}>
                     <Paper style={{marginBottom:'40px',backgroundColor:'#F4F6F6'}} elevation={3} >
-
                         <BackDrop start={prog} />
                         
-                    
                         <div className="img-text1">
                             <h1 style={{fontSize:'150%'}}>Requests!</h1>
                         </div>
                         
                        <div>
-                            
-                            
+                                                        
                             <div className="font1" style={{margin:'30px'}}>
                                 <h1 style={{fontSize:'220%'}}>Approve Requests</h1>
                                 <p>Instructions:</p>
@@ -103,7 +91,7 @@ export default function Cart(props){
                                 <div style={{display:'flex',justifyContent:'center',flexWrap: 'wrap'}}>
                                     {approve.length>0 ?
                                         approve.map((data,ind)=>{
-                                            console.log(data);
+                                            
                                             return <Approve change={dataR} unique_key={data.unique_key} check={'requester'} name={data.resource_name} email={data.request_email} approve={data.deal} />
                                         })
                                     : <h1 style={{fontSize:'220%'}}>NO Requests</h1>}
@@ -121,14 +109,9 @@ export default function Cart(props){
                                             return <Request name={data.resource_name} email={data.resource_owner} approve={data.finalApprove} />
                                         })
                                     : <h1 style={{fontSize:'220%'}}>NO Requests</h1>}
-                                
                                 </div>
-
                             </div>
                        </div>
-
-                        
-
                     </Paper>
                 </div>
             </div>

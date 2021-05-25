@@ -14,11 +14,9 @@ const useStyles = makeStyles((theme)=>({
   fullList: {
     width: 'auto',
   },
-  
 }));
 
 export default function TemporaryDrawer(props) {
-  
   const classes = useStyles();
   const [state, setState] = React.useState(props.check);
 
@@ -37,29 +35,21 @@ export default function TemporaryDrawer(props) {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
     >
       <div>
-
         <Resource danger={props.danger}  closer={props.Change} Name={props.Name} />
-
       </div>
 
     </div>
   );
   
   return (
-    
     <div>
-      
         <React.Fragment key={'right'}>
           <Drawer anchor={'right'} open={state} onClose={toggleDrawer('right', false)}>
             {list('right')}
           </Drawer>
-          
         </React.Fragment>
- 
     </div>
   );
 }

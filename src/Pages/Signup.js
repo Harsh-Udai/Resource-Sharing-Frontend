@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import './Signup.css';
 import image1 from '../Assets/signup.svg';
-// import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
@@ -11,7 +10,6 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {Redirect} from 'react-router-dom';
-
 const axios = require('axios').default;
 
 function CircularProgressWithLabel(props) {
@@ -37,22 +35,9 @@ function CircularProgressWithLabel(props) {
   }
   
   CircularProgressWithLabel.propTypes = {
-    /**
-     * The value of the progress indicator for the determinate variant.
-     * Value between 0 and 100.
-     */
+   
     value: PropTypes.number.isRequired,
   };
-
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//       width: '100%',
-//       '& > * + *': {
-//         marginTop: theme.spacing(2),
-//       },
-//     },
-//   }));
 
 
 const Signup = ()=>{
@@ -357,9 +342,7 @@ const Signup = ()=>{
                     
                     </div>
                 </div>
-                
-        </div>
-        
+        </div>  
     )
 }
 

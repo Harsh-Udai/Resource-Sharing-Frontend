@@ -10,7 +10,6 @@ const Search = ()=>{
     const [image,setImage] = useState([]);
     const [start,setStart] = useState(false);
     const [error,setError] = useState(false);
-    
 
     const inputS = (e)=>{
         setInput(e.target.value);
@@ -75,7 +74,6 @@ const Search = ()=>{
                 </div>
             </div>
         </div>
-
     )
 }
 

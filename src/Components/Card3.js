@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MiddleDividers(props) {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <div className={classes.section1}>
@@ -39,7 +38,6 @@ export default function MiddleDividers(props) {
               <span className="font1">Hello :)</span>
             </Typography>
           </Grid>
-          
         </Grid>
         <Typography color="textSecondary" variant="body2">
           This is the Notification Section here you can text imp announcements regarding some resources
@@ -47,7 +45,6 @@ export default function MiddleDividers(props) {
         </Typography>
       </div>
       <Divider variant="middle" />
-      
       <div className={classes.section3}>
         <Button color="primary" onClick={props.findF}>View Feed</Button>
       </div>

@@ -2,8 +2,6 @@
 
 .resetMid{
     width: 500px;
-    
-    
 }
 .resetMid-1{
     display: flex;
@@ -23,7 +21,6 @@
     font-family: 'Source Sans Pro', sans-serif;
     width: 360px;
     background-color: #F2F3F4;
-    
     padding: 20px;
     padding-left: 25px;
     border: 1px solid white;

@@ -146,10 +146,7 @@ export default function ScrollableTabsButtonAuto(props) {
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          
           centered
-          
-                    
         >
           <Tab label={<StorefrontIcon />} onClick={(e)=>HomeH(e)} {...a11yProps(0)} />
           <Tab label={<AddPhotoAlternateIcon />} onClick={(e)=>AddC(e)} {...a11yProps(1)} />
@@ -181,4 +178,3 @@ export default function ScrollableTabsButtonAuto(props) {
     </div>
   );
 }
-// <Link to="/UI/messenger">Messenger</Link>

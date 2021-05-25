@@ -4,16 +4,13 @@
 
 .main-part-1{
     text-align: center;
-    
     font-size: 500%;
     margin: 50px;
     margin-bottom: -100px;
 }
 .main-part-ANIME{
     text-align: center;
-    
     font-size: 500%;
-    
 }
 .split-2{
     font-family: 'RocknRoll One', sans-serif;
@@ -23,6 +20,9 @@
     justify-content:space-between;    
     margin-left: 20vh;
     margin-top: -30px;
+    animation: object 1.5s ease-in-out infinite alternate;
+}
+.main-part-2-error{
     animation: object 1.5s ease-in-out infinite alternate;
 }
 
@@ -88,8 +88,6 @@
     position:relative;
     bottom: -190px;
     font-family: 'Lexend', sans-serif;
-    
-    
 }
 .image-content{
     margin-top: 20px;

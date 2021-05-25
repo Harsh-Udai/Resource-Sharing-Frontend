@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import './Profile.css';
 import head from '../Assets/Animated Shape.svg'
-
 import Avatar1 from 'avataaars';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
@@ -13,7 +12,6 @@ import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import {Redirect} from 'react-router-dom';
 
-
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -21,18 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const Profile = (props)=>{
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    
     const [count,setCount] = useState(0);
-
     const [dataAr,setArr] = useState([]);
     const [prog,setProg] = useState(true);
-    
     const [Errpro,setEPRO] = useState(0);
-
     const letUpdate = ()=>{
         axios.post('http://localhost:5000/Profile/userData',{
                     email:props.main.master_user.email,
@@ -75,15 +68,10 @@ const Profile = (props)=>{
                 .catch((e)=>{
                     console.log(e);
                 })
-            }
-            
-
-            
+            }          
             return () => {
                 abortController.abort();
-            };
-            
-             
+            };      
     })
     
     const CardClick = (et,unique_id)=>{
@@ -203,7 +191,6 @@ const Profile = (props)=>{
             <Backdrop className={classes.backdrop} open={open} >
                 <CircularProgress color="inherit" />
             </Backdrop>
-
         </div>
     )
 }

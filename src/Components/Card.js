@@ -10,7 +10,6 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-
 import GroupIcon from '@material-ui/icons/Group';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Badge from '@material-ui/core/Badge';
@@ -18,17 +17,14 @@ import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import Chip from './chip';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
-
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    
   },
   media: {
     height: 0,
-    
     paddingTop: '86.25%',  // 16:9
   },
   title: {
@@ -59,14 +55,11 @@ export default function RecipeReviewCard(props) {
   
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
   const [countAPI,setcountAPI] = React.useState(props.count);
   var today = new Date();
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   const liker=(et)=>{
       props.back(true)
       axios.post('http://localhost:5000/Resource/interest',{
@@ -98,25 +91,17 @@ export default function RecipeReviewCard(props) {
       .catch((e)=>{
           console.log(e);
       })
-
-   
-      
-
   }
 
   return (
     <Card className={classes.root}>
-      
       <CardMedia
-        
         className={classes.media}
         image={`data:image/png;base64,`+new Buffer.from(props.image.data).toString("base64")}
         title="Paella dish"
-       
         key = {props.keyPart}
       />
       <CardHeader
-        
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
             <VerifiedUserIcon />
@@ -131,11 +116,9 @@ export default function RecipeReviewCard(props) {
       
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-
           <Badge color="secondary" badgeContent={countAPI} showZero>
             <GroupIcon onClick={()=>liker(props.name)} />
           </Badge>
-          
         </IconButton>
         <Link push="true" style={{textDecoration:'none'}}  to={{pathname:`/UI/Product/${props.name}`,state:{email:props.email,unique_id:props.unique_id}}} ><Button color="default" style={{marginLeft:'60px'}}>VIEW</Button></Link>
         <IconButton
