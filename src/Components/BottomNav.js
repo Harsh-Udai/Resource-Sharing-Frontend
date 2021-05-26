@@ -8,6 +8,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import AlertD from './Alert_Dialog';
 import alert1 from '../Assets/alert1.svg';
 import alert2 from '../Assets/alert2.svg';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const useStyles = makeStyles({
@@ -18,11 +19,14 @@ const useStyles = makeStyles({
 
 export default function SimpleBottomNavigation(props) {
   const classes = useStyles();
+  const history = useHistory()
+
   const [oEr,setOE] = useState(false);
   const [oEr1,setOE1] = useState(false);
   const [oEr2,setOE2] = useState(false);
   const [oEr3,setOE3] = useState(false);
   const [oEr4,setOE4] = useState(false);
+  const [buyR,setBR] = useState(false);
   const [value, setValue] = React.useState('');
   const add_cart = ()=>{
       
@@ -64,12 +68,13 @@ export default function SimpleBottomNavigation(props) {
       }
       else{
         add_cart();
+        setBR(true);
       }
     }
   }
 
   const Handle_Cart = ()=>{
-    
+    setBR(false);
     if(props.cart_data.owner_email===props.main.master_user.email){
       setOE(true);
     }
@@ -81,6 +86,7 @@ export default function SimpleBottomNavigation(props) {
       }
       else{
         add_cart();
+        
       }
     }
   }
@@ -89,10 +95,17 @@ export default function SimpleBottomNavigation(props) {
     setOE(false);
   }
   const stopper1 = ()=>{
+    
     setOE1(false);
+    if(buyR){
+      history.push('/UI/Cart');
+    }
   }
   const stopper2 = ()=>{
     setOE2(false);
+    if(buyR){
+      history.push('/UI/Cart');
+    }
   }
   const stopper3 = ()=>{
     setOE2(false);

@@ -40,7 +40,7 @@ export default function Cart(props){
             }
         })
         .then((data)=>{
-            console.log(data);
+            
             setHk(1);
             setPend(data.data.pending)
             setAPR(data.data.approve)

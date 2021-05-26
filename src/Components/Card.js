@@ -53,6 +53,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard(props) {
   
+  
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [countAPI,setcountAPI] = React.useState(props.count);
@@ -98,7 +100,6 @@ export default function RecipeReviewCard(props) {
       <CardMedia
         className={classes.media}
         image={`data:image/png;base64,`+new Buffer.from(props.image.data).toString("base64")}
-        title="Paella dish"
         key = {props.keyPart}
       />
       <CardHeader
@@ -115,11 +116,11 @@ export default function RecipeReviewCard(props) {
       />
       
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        {!props.search ?<IconButton aria-label="add to favorites">
           <Badge color="secondary" badgeContent={countAPI} showZero>
             <GroupIcon onClick={()=>liker(props.name)} />
           </Badge>
-        </IconButton>
+        </IconButton> : null}
         <Link push="true" style={{textDecoration:'none'}}  to={{pathname:`/UI/Product/${props.name}`,state:{email:props.email,unique_id:props.unique_id}}} ><Button color="default" style={{marginLeft:'60px'}}>VIEW</Button></Link>
         <IconButton
           className={clsx(classes.expand, {
