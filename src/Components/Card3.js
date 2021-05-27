@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,13 +42,13 @@ export default function MiddleDividers(props) {
           </Grid>
         </Grid>
         <Typography color="textSecondary" variant="body2">
-          This is the Notification Section here you can text imp announcements regarding some resources
-          you can also share important links to some events. Please don't do Spam here otherwise you will be banned.
+          <span className="font1">This is the Notification Section here you can text imp announcements regarding some resources
+          you can also share important links to some events. Please don't do Spam here otherwise you will be banned.</span>
         </Typography>
       </div>
       <Divider variant="middle" />
       <div className={classes.section3}>
-        <Button color="primary" onClick={props.findF}>View Feed</Button>
+        <Button color="primary"  onClick={props.findF}>View Feed <NavigateNextIcon /></Button>
       </div>
     </div>
   );

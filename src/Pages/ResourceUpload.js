@@ -15,6 +15,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+let Filter = require("bad-words");
 const axios = require('axios').default;
 
 function Alert(props) {
@@ -129,6 +130,8 @@ const useStyles = makeStyles((theme) => ({
 const ResourceUpload = (props)=>{
     
     const refe = React.createRef();
+    const filter = new Filter();
+
     const  vertical = 'bottom';
     const horizontal = 'left';
     const handleClose1 = (event, reason) => {
@@ -190,6 +193,8 @@ const ResourceUpload = (props)=>{
       const [inputDis,setINDIS] = useState(false);
       const [price,setPrice] = useState('');
 
+      const [profanity,setProf] = useState(false);
+
       const PriceData = (e)=>{
         
         if(e.target.value===''){
@@ -216,30 +221,44 @@ const ResourceUpload = (props)=>{
       }
 
       const resourceSet = (e)=>{
+        
         const name = e.target.value;
-        if(name.length >5){
-          setRNE(false);
-          setRN(name);
-        }
-        else if(name.length===0){
-          setRNE(false);
+
+        if(filter.isProfane(name)){
+          setRNE(true);
+          setProf(true);
+        
         }
         else{
-          setRNE(true);
+          setProf(false);
+          if(name.length >5){
+            setRNE(false);
+            setRN(name);
+          }
+          
+          else{
+            setRNE(true);
+          }
         }
+        
       }
 
       const desc = (e)=>{
+        
         const name = e.target.value;
-        if(name.length >5){
-          setRDE(false);
-          setRD(name);
-        }
-        else if(name.length===0){
-          setRDE(false);
+        if(filter.isProfane(name)){
+          setRDE(true);
+          setProf(true);
         }
         else{
-          setRDE(true);
+          if(name.length >5){
+            setRDE(false);
+            setRD(name);
+          }
+          
+          else{
+            setRDE(true);
+          }
         }
       }
 
@@ -271,10 +290,11 @@ const ResourceUpload = (props)=>{
 
       const formApplyR = (e)=>{
         e.preventDefault();
+          setProf(false);
           setSuccess(false);
           setLoading(true);
           
-        if(Resource_name.length>5  && Resource_desc.length>5 && image && ((borrowEr && price==='')||(!borrowEr && price!==''))){
+        if(Resource_name.length>5 && Resource_desc.length>5 && re_name_er===false && re_dec_er===false   && image && ((borrowEr && price==='')||(!borrowEr && price!==''))){
           
           setFER(false);
           
@@ -287,7 +307,7 @@ const ResourceUpload = (props)=>{
           setLoading(false);
         }
 
-        if(Resource_name.length>5  && Resource_desc.length>5 && image && ((borrowEr && price==='')||(!borrowEr && price!==''))){
+        if(Resource_name.length>5 && Resource_desc.length>5 && re_name_er===false && re_dec_er===false  && image && ((borrowEr && price==='')||(!borrowEr && price!==''))){
           const formData = new FormData();
           formData.append('resource_Name',Resource_name);
           formData.append('resource_Description',Resource_desc);
@@ -323,7 +343,7 @@ const ResourceUpload = (props)=>{
       //console.log(props);
 
     return(
-        <div >
+        <div>
             <div className="decor">
               </div>
             <div>
@@ -491,7 +511,7 @@ const ResourceUpload = (props)=>{
                     
                     <Snackbar ref={refe} open={formER} autoHideDuration={6000} onClose={handleClose1}>
                       <Alert onClose={handleClose1} severity="error">
-                        Error in Form, fill correctly!
+                        Error in Form, fill form with correct detail & description!
                       </Alert>
                     </Snackbar>
 
@@ -500,7 +520,17 @@ const ResourceUpload = (props)=>{
                         Resource Added!!
                       </Alert>
                     </Snackbar>
+
+                    <Snackbar anchorOrigin={{ vertical:'bottom', horizontal:'right' }} open={profanity} autoHideDuration={6000} >
+                      
+                      <Alert  severity="warning">This is a warning message, Profanity is not allowed here!</Alert>
+                      
+                    </Snackbar>
+
+                    
+
                 </div>
+                
             </div>
         </div>
     )

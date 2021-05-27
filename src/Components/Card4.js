@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,7 @@ export default function MiddleDividers(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root}  className="backImage">
       <div className={classes.section1}>
         <Grid container alignItems="center">
           <Grid item xs>
@@ -48,7 +49,7 @@ export default function MiddleDividers(props) {
       </div>
       <Divider variant="middle" />
       <div className={classes.section3}>
-          <Link to="/UI/messenger" style={{textDecoration:'none'}}> <Button style={{color:'#17202A',backgroundColor:'#F4F6F6'}} onClick={props.findF}>Open Chat App</Button></Link>
+          <Link to="/UI/messenger" style={{textDecoration:'none'}}> <Button style={{color:'#17202A',backgroundColor:'#F4F6F6'}} onClick={props.findF}>Open Chat App <NavigateNextIcon /></Button></Link>
       </div>
     </div>
   );

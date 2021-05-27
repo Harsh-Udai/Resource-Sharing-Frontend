@@ -10,3 +10,29 @@
   font-size: 250%;
   font-family: 'Lexend', sans-serif;
 }
+
+.footer_home{
+  margin-top: 1rem;
+  padding: 75px;
+  position: relative;
+  text-align: center;
+  background-image: url('../Assets/qwd83nc4xxf41.jpg');
+  color:white;
+  font-size: 250%;
+  font-family: 'Lexend', sans-serif;
+  
+  border-radius:10px;
+}
+.footer_home_card{
+  width:30%
+}
+.footer_home_flex{
+  display:flex;
+  justify-content:center;
+  margin-bottom: -50px;
+}
+.footer_home_card_text{
+  border-radius:5px;
+  padding-bottom: 5px;
+ background-color: #6495ED ;
+}

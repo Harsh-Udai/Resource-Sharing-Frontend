@@ -7,6 +7,7 @@ import imag3 from '../Assets/clip-1394.png';
 import imag4 from '../Assets/spot-rocket.png';
 import HomeAlert from '../Components/Home_alert';
 import './Home.css';
+import share_i from '../Assets/social-media.png';
 
 const Home = (props) => {
     
@@ -24,7 +25,7 @@ const Home = (props) => {
                         </div>
                     </div>
                     <div className="main-part-1" >
-                        <div style={{marginBottom:'15px'}}>
+                        <div style={{marginBottom:'15px',textAlign:'center'}}>
                             <p>Welcome to <br></br><span className="split-2"><span style={{color:"#7DCEA0"}}>R</span>esource <span style={{color:'#F5B041'}}>S</span>haring </span>Platform <span><br></br></span></p>
                             <div style={{marginTop:'-100px',marginBottom:'100px'}}><HomeAlert /></div>
                         </div>
@@ -67,6 +68,20 @@ const Home = (props) => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                <div className="footer_home" style={{marginTop:'30px'}}>
+                    <img width="100px" alt="." src={share_i}></img>
+                    <div className="footer_home_flex"> 
+                        <div className="footer_home_card" >
+                            <p className="footer_home_card_text">Sharing is Caring !</p>
+                        </div>
+                    </div>
+                    
+                        
+                    
+                    
+                </div>
                 </div>
             </div>
         </div>

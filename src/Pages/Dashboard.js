@@ -92,7 +92,7 @@ const Dashboard = (props)=>{
                         <h1>Welcome!</h1>
                     </div>
                 </div>
-                <div style={{marginTop:'50px'}}>
+                <div style={{marginTop:'50px'}} >
                     <div className="font">
                         <p>Available Resources</p>
                     </div>

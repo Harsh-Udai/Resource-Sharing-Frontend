@@ -8,6 +8,8 @@ import './Login.css';
 import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 import SocketIO from 'socket.io-client';
+import ImageAuth from '../Assets/spinner.png';
+
 
 export default function Login(props){
     
@@ -107,8 +109,11 @@ export default function Login(props){
                 <div className="Login-text">
                     <div><LockOpenIcon fontSize="large" /></div> Signin 
                 </div>
+                <div className="spin_set" >
+                    <img className="spinner" alt='.' width="120px" src={ImageAuth}></img>
+                </div>
 
-                <div>
+                <div >
                     <div className="MainLog">
 
                         <form>

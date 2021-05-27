@@ -17,7 +17,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LinearProgress from '@material-ui/core/LinearProgress';
-
+let Filter = require("bad-words");
 const axios = require('axios').default;
 
 
@@ -190,6 +190,7 @@ const ResourceUpload = (props)=>{
     
     
   const refe = React.createRef();
+  const filter = new Filter();
   const  vertical = 'bottom';
   const horizontal = 'left';
   const handleClose1 = (event, reason) => {
@@ -245,6 +246,7 @@ const ResourceUpload = (props)=>{
       const [borrowEr1,setBER1] = useState(false);
       const [inputDis,setINDIS] = useState(false);
       const [price,setPrice] = useState('');
+      const [profanity,setProf] = useState(false);
 
       const PriceData = (e)=>{
         setPrice('')
@@ -276,32 +278,48 @@ const ResourceUpload = (props)=>{
       const resourceSet = (e)=>{
         setRN('')
         const name = e.target.value;
-        if(name.length >5){
-          setRNE(false);
+        const name1 = name;
+
+        if(filter.isProfane(name1)){
+          setRNE(true);
+          setProf(true);
           setRN(name);
-        }
-        else if(name.length===0){
-          setRNE(false);
+          
         }
         else{
-          setRN(name);
-          setRNE(true);
+          setProf(false);
+          if(name.length >5){
+            setRNE(false);
+            setRN(name);
+          }
+          
+          else{
+            setRN(name);
+            setRNE(true);
+          }
         }
       }
 
       const desc = (e)=>{
         setRD('')
         const name = e.target.value;
-        if(name.length >5){
-          setRDE(false);
+        const name1 = name;
+        
+        if(filter.isProfane(name1)){
+          setRDE(true);
+          setProf(true);
           setRD(name);
-        }
-        else if(name.length===0){
-          setRDE(false);
         }
         else{
-          setRD(name);
-          setRDE(true);
+          if(name.length >5){
+            setRDE(false);
+            setRD(name);
+          }
+          
+          else{
+            setRD(name);
+            setRDE(true);
+          }
         }
       }
 
@@ -344,11 +362,12 @@ const ResourceUpload = (props)=>{
       const [imageUrl, setURL] = useState('');
       const formApplyR = (e)=>{
         e.preventDefault();
-          setSuccess(false);
-          setLoading(true);
+        setProf(false);
+        setSuccess(false);
+        setLoading(true);
         
 
-        if(Resource_name.length>5  && Resource_desc.length>5 && (image!=='' || imageBack!=='') && ((borrowEr && price==='')||(!borrowEr && price!==''))){
+        if(Resource_name.length>5 && re_name_er===false && re_dec_er===false && Resource_desc.length>5 && (image!=='' || imageBack!=='') && ((borrowEr && price==='')||(!borrowEr && price!==''))){
           
           setFER(false);
           
@@ -365,7 +384,7 @@ const ResourceUpload = (props)=>{
         //   console.log("price",price,typeof(price),price==='')
         //   console.log(imageBack!=='')
 
-        if(Resource_name.length>5  && Resource_desc.length>5 && (image!=='' || imageBack!=='') && ((borrowEr && price==='')||(!borrowEr && price!==''))){
+        if(Resource_name.length>5 && re_name_er===false && re_dec_er===false && Resource_desc.length>5 && (image!=='' || imageBack!=='') && ((borrowEr && price==='')||(!borrowEr && price!==''))){
           const formData = new FormData();
           formData.append('OriginalName',originalName)
           formData.append('resource_Name',Resource_name);
@@ -598,6 +617,13 @@ const ResourceUpload = (props)=>{
                         Resource Updated
                       </Alert>
                     </Snackbar>
+
+                    <Snackbar anchorOrigin={{ vertical:'bottom', horizontal:'right' }} open={profanity} autoHideDuration={6000} >
+                      
+                      <Alert  severity="warning">This is a warning message, Profanity is not allowed here!</Alert>
+                      
+                    </Snackbar>
+
                 </div>}
             </div> 
         </div>

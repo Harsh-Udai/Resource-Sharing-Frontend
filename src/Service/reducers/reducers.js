@@ -1,4 +1,4 @@
-import {SETUSER,UNSETUSER,PROFILE,CENTRAL,NOTIFICATION,ANIMATION,CART,REQUESTS} from '../constants';
+import {SETUSER,UNSETUSER,PROFILE,CENTRAL,NOTIFICATION,ANIMATION,CART,REQUESTS,ADMIN} from '../constants';
 
 const initialState = {
     user:'',
@@ -13,7 +13,8 @@ const initialState = {
     class:'',
     socket:null,
     socket_data:[],
-    animate:true
+    animate:true,
+    admin_d:[]
 }
 
 export default function master_user(state=initialState,action) {
@@ -75,6 +76,12 @@ export default function master_user(state=initialState,action) {
             return{
                 ...state,
                 request:action.data
+            }
+
+        case ADMIN:
+            return{
+                ...state,
+                admin_d:action.data
             }
 
         default:

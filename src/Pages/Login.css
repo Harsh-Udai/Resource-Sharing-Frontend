@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
+.Login{
+    /* background-image: url('../Assets/qwd83nc4xxf41.jpg');
+    height:100% */
+}
 .MainLog{
+    
     display: flex;
     justify-content: center;
     margin-top: 60px;
@@ -58,4 +63,35 @@
 }
 .endPart{
     margin-top: -20px;
+}
+
+.spin_set{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -125px;
+    margin-left: 402px;
+}
+
+.spinner{
+    z-index:-1;
+    animation-name: spin;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 590px) {
+    
+    .spin_set{
+        display: none;
+    }
 }

@@ -1,0 +1,27 @@
+.admin_back{
+    background-image:url('../Assets/5cc79f7ece2801f9a75e545f8556349e.jpg');
+    border-radius: 10px;
+    opacity: 5;
+    width: 800px;
+    height:200px;
+}
+
+.admin_input{
+    width:300px;
+    height: 50px;
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 150%;
+}
+.admin_button{
+    margin-left: 10px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 150%;
+    background-color:lightgreen;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

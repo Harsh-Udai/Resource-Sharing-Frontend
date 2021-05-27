@@ -25,7 +25,8 @@ export default function ButtonAppBar() {
       <AppBar position="static" style={{backgroundColor:'white',color:'black',boxShadow:'none'}}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} >
-            <span className="tag-1">Resource Sharing</span>
+            <span className="tag-1"><span style={{backgroundColor:'#FF7F50',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Resource</span>
+            <span> Sharing</span></span>
           </Typography>
         </Toolbar>
       </AppBar>

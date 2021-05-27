@@ -17,7 +17,7 @@ import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+let Filter = require("bad-words");
 
 
 const useStyles = makeStyles((theme) => ({
@@ -59,7 +59,7 @@ export default function Messenger(props) {
 
     // console.log(props);
     const user = props.main.master_user
-    
+    const filter = new Filter();
     const classes = useStyles();
     const socket = useRef();
 
@@ -96,7 +96,7 @@ export default function Messenger(props) {
     const [onlineUsers, setOnlineUsers] = useState([]);
     const [color1,setColor1] = useState("color");
     const [color2,setColor2] = useState("");
-
+    const [profanity,setProf] = useState(false);
 
     const [prog,setProg] = useState(false);
     const [prog1,setProg1] = useState(false);
@@ -222,29 +222,42 @@ export default function Messenger(props) {
 
     
     const handleSubmit = async(e)=>{
+        const name = newMessage;
         e.preventDefault();
-        const message={
-            sender: user._id,
-            text: newMessage,
-            conversationId:currentChat._id
+        if(filter.isProfane(name)){
+            setProf(true);
+            setNewMessage("");
         }
-        setNewMessage("");
-        const receiverId = currentChat.members.find(mem=> mem!==user._id)
-
-        socket.current.emit('sendMessage',{
-            senderId: user._id,
-            receiverId,
-            text:newMessage
-        })
-
-        try{
-            const res = await axios.post('http://localhost:5000/api/messages',message);
-            
-            setMessages([...messages,res.data]);
+        else{
+            if(newMessage.trim()!==''){
+                const message={
+                    sender: user._id,
+                    text: newMessage,
+                    conversationId:currentChat._id
+                }
+                setNewMessage("");
+                const receiverId = currentChat.members.find(mem=> mem!==user._id)
+        
+                socket.current.emit('sendMessage',{
+                    senderId: user._id,
+                    receiverId,
+                    text:newMessage
+                })
+        
+                try{
+                    const res = await axios.post('http://localhost:5000/api/messages',message);
+                    
+                    setMessages([...messages,res.data]);
+                }
+                catch(e){
+                    console.log(e);
+                }
+            }
+            else{
+                setNewMessage("");
+            }
         }
-        catch(e){
-            console.log(e);
-        }
+        
     }
 
     useEffect(()=>[
@@ -262,14 +275,14 @@ export default function Messenger(props) {
             open: false,
         });
 
-        console.log("Conversations",conversations);
-        console.log("data to be added",data)
+        // console.log("Conversations",conversations);
+        // console.log("data to be added",data)
 
         const mk = conversations.filter((dt)=>{
            return (dt.members[0]===user._id && dt.members[1]===data._id) || (dt.members[1]===user._id && dt.members[0]===data._id)
         })
 
-        console.log(mk);
+        // console.log(mk);
 
         if(mk.length===1){
             setCurrentChat(mk[0]);
@@ -303,6 +316,11 @@ export default function Messenger(props) {
 
     }
 
+    const msg_wire = (e)=>{
+        
+        setNewMessage(e.target.value)
+    }
+
 
     if(props.main.master_user.user===''){
         return <Redirect to='/UI' />
@@ -312,8 +330,8 @@ export default function Messenger(props) {
     return(
         <>
         <Navbar />
-        
-        <div className={classes.root}>
+        <div >
+        <div className={classes.root} >
         
             <Paper elevation={3} className="mainPaper font1"  >
                              
@@ -365,7 +383,7 @@ export default function Messenger(props) {
                         {
                             currentChat ?
                         <>
-                        <div className="chatBoxTop">
+                        <div className="chatBoxTop" >
                             
                             
                                 {messages.length!==0 ? 
@@ -381,13 +399,14 @@ export default function Messenger(props) {
                             {prog ? <CircularProgress /> : null}
 
                         </div>
-                        <div className="chatBoxBottom " >
-                            
-                            <input className="input_MM" onChange={(e)=>{setNewMessage(e.target.value)}} value={newMessage} id="outlined-basic" placeholder=" Type here..." variant="outlined" />
-                            {/* <button onClick={handleSubmit}>Send</button> */}
-                             <Fab color="primary" aria-label="add" style={{marginTop:'-5px'}}  onClick={handleSubmit} >
-                                    <SendRoundedIcon />
-                            </Fab> 
+                        <div className="chatBoxBottom" >
+                            <form onSubmit={handleSubmit}>
+                                <input className="input_MM" onChange={msg_wire} value={newMessage} id="outlined-basic" placeholder=" Type here..." variant="outlined" />
+                                {/* <button onClick={handleSubmit}>Send</button> */}
+                                <Fab color="primary" aria-label="add" style={{marginTop:'-5px'}}  onClick={handleSubmit} >
+                                        <SendRoundedIcon />
+                                </Fab> 
+                            </form>
                         </div></>:<span className="noConversationText" style={{backgroundColor:'#7DCEA0',marginBottom:'50px',color:'white',fontSize:'150%'}}>Open a conversation to start a chat</span>}
                     </div>
                     
@@ -432,7 +451,12 @@ export default function Messenger(props) {
                     </Alert>
                 </Snackbar>
             </div>
-            
+            <Snackbar anchorOrigin={{ vertical:'bottom', horizontal:'right' }} open={profanity} onClose={()=>setProf(false)} autoHideDuration={6000} >
+                      
+              <Alert  severity="warning">This is a warning message, Profanity is not allowed here!</Alert>
+              
+            </Snackbar>
+            </div>
         </>
     )
 }

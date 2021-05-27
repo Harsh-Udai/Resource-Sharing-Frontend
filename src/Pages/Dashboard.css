@@ -1,3 +1,5 @@
+
+
 .img-cen{
     position: relative;
     text-align: center;
@@ -7,6 +9,11 @@
 .font1{
     font-family: 'Lexend', sans-serif;
 }
+
+.backImage{
+    background-image: url('../Assets/qwd83nc4xxf41.jpg');
+}
+
 .img-text{
     font-family: 'Lexend', sans-serif;
     position: absolute;

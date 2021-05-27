@@ -46,22 +46,22 @@ export default function Chat() {
     const classes = useStyles();
 
     return(
-        <>
+        <div >
           <div className={classes.root}>
-           <Paper elevation={3} >
+           <Paper elevation={3}  className="backImage">
                 <div className={classes.root_1}>
-                    <Paper elevation={1} style={{display: 'flex',justifyContent: 'center'}}>
+                    <Paper  className="backImage" elevation={1} style={{display: 'flex',justifyContent: 'center'}}>
                            <p style={{color: '#5F6A6A'}} className="Chat-Head">Chat App..</p>
                     </Paper>
                 </div>
                 <div style={{marginTop:'1px'}} className="decor">
                 </div>
-                <div style={{display:'flex',justifyContent:'center',marginTop:'100px'}}>
+                <div  style={{display:'flex',justifyContent:'center',marginTop:'100px'}}>
                     <Card />
                 </div>
             </Paper>
             
         </div>
-        </>
+        </div>
     )
 }

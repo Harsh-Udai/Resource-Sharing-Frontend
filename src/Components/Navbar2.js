@@ -225,14 +225,19 @@ export default function PrimarySearchAppBar(props) {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{backgroundColor:'white',color:'black',boxShadow:'none'}}>
+    <div className={classes.grow}  >
+      <AppBar  position="static" style={{backgroundColor:'white',color:'black',boxShadow:'none'}}>
         <Toolbar>
           
             
           
           <Typography className={classes.title} variant="h6" noWrap>
-          <div className="tag-1"><Link push="true" style={{textDecoration:'none',color:'black'}}  to='/UI' >Resource Sharing</Link></div>
+          <div className="tag-1"><Link push="true" style={{textDecoration:'none',color:'black'}}  to='/UI' >
+            
+            
+            <span style={{backgroundColor:'#FF7F50',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Resource</span>
+            <span> Sharing</span>
+            </Link></div>
           </Typography>
           
           <div className={classes.grow} />

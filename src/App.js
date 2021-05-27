@@ -13,6 +13,8 @@ import Anime  from './Pages/Animation';
 import Cart from './Containers/CartContainer';
 import Requests from './Containers/RequestContainer';
 import Mess from './Containers/messageContainer';
+import Admin from './Containers/AdminContainer';
+import AdminLogin from './Containers/AdminLoginContainer';
 import Error from './Pages/Error';
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route exact path='/UI/Product/:id' component={Product} />
           <Route exact path='/AI' component={Anime} />
           <Route exact path='/UI/messenger' component={Mess} />
+          <Route exact path='/auth/admin' component={Admin} />
+          <Route exact path='/auth/Login' component={AdminLogin} />
           <Route component={Error} />
         </Switch>
       </Router>

@@ -1,21 +1,23 @@
 
 .mainPaper{
     display: flex;
-    text-align: center;
+    
 
 }
 
 .conversations{
     flex: 4;
-    
+    text-align: center;
 }
 
 .inputChat{
     flex: 5.5;
+    text-align: center;
 }
 
 .OnlinePeople{
     flex: 2.5;
+    text-align: center;
     
 }
 .setF{
@@ -26,9 +28,9 @@
 }
 
 .chatBoxWrapper{
-    display:flex;
+    /* display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     position: relative;
 }
 
@@ -36,13 +38,12 @@
     height:478px;
     overflow-y: scroll;
     padding-right: 10px;
+    text-align: center;
 }
 
 .chatBoxBottom{
     margin-top: 5px;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
+    
 }
 
 
@@ -119,7 +120,7 @@
 
 /* Input */
 .input_MM{
-    width:510px;
+    width:80%;
     height:62px;
     outline:none;
     overflow: auto;
@@ -137,7 +138,7 @@
 
 @media only screen and (max-width: 996px) {
     .input_MM{
-        width:350px;
+        width:70%;
     }
     .OnlinePeople{
         display: none
@@ -155,13 +156,13 @@
 }
 @media only screen and (max-width: 723px) {
     
-    .input_MM{
-        width:300px;
-    }
+    /* .input_MM{
+        width:280px;
+    } */
 }
 @media only screen and (max-width: 407px) {
     
-    .input_MM{
-        width:150px;
-    }
+    /* .input_MM{
+        width:130px;
+    } */
 }

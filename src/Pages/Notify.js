@@ -7,8 +7,9 @@ import Paper from '@material-ui/core/Paper';
 import Contain from '../Components/NotifyContain';
 import MuiAlert from '@material-ui/lab/Alert';
 import Card3 from '../Components/Card3';
+import Snackbar from '@material-ui/core/Snackbar';
 import axios from 'axios';
-
+let Filter = require("bad-words");
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -99,11 +100,14 @@ export default function Notify(props){
     const [user,setD] = useState("");
     const [data,setData] = useState([]);
     const [show,setShow] = useState('none');
+    const [profanity,setProf] = useState(false);
+    const filter = new Filter();
 
     //Error states
     const [ButtonE, setBE] = useState(false);
     const classes = useStyles();
     const Userval = (e)=>{
+      
         setD(e.target.value);
     }
     var today = new Date();
@@ -122,11 +126,17 @@ export default function Notify(props){
     const MSG_event = (e)=>{
 
         e.preventDefault();
+        const name = user;
+       
+        
         if(user.trim().length ===0){
             setBE(true);
             props.main.master_user.socket.on('DataE',data => {
                 setData(data);
             })
+        }
+        if(filter.isProfane(name)){
+          setProf(true);
         }
         else{
             setBE(false);
@@ -180,7 +190,7 @@ export default function Notify(props){
     }
 
     return(
-        <div>
+        <div   >
         <div className={classes.root}>
            <Paper elevation={3} >
                 <div className={classes.root_1}>
@@ -234,7 +244,13 @@ export default function Notify(props){
                 <div style={{marginTop:'-10px'}} className={classes.Error}>
                     {ButtonE ? <Alert severity="info">Post important Notifications and Don't do Spam here!</Alert> : null}
                 </div>
+
             </div>
+            <Snackbar anchorOrigin={{ vertical:'bottom', horizontal:'right' }} open={profanity} onClose={()=>setProf(false)} autoHideDuration={6000} >
+                      
+              <Alert  severity="warning">This is a warning message, Profanity is not allowed here!</Alert>
+              
+            </Snackbar>
         </div>
     )
 }
