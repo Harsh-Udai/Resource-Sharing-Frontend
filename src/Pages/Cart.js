@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   
 
 export default function Cart(props){
-
+    
     const classes = useStyles();
     const [hook,setHk] = useState(0);
     const [redata,setRD] = useState([]);
@@ -39,7 +39,14 @@ export default function Cart(props){
             })
             .then((data)=>{
                 setHk(1);
-                setRD(data.data)
+                console.log(props);
+                const uiO=[]
+                const yy = data.data.map((dat)=>{
+                    if(props.main.master_user.active_users.includes(dat.resource_owner)){
+                        uiO.push(dat);
+                    }
+                })
+                setRD(uiO)
                 
             })
             .catch((e)=>{
@@ -57,7 +64,7 @@ export default function Cart(props){
             abortController.abort();
         };
 
-    })
+    },[])
 
     const handle = ()=>{
         setProg(false);

@@ -1,4 +1,4 @@
-import {SETUSER,UNSETUSER,PROFILE,CENTRAL,NOTIFICATION,ANIMATION,CART,REQUESTS,ADMIN} from '../constants';
+import {SETUSER,UNSETUSER,PROFILE,CENTRAL,NOTIFICATION,ANIMATION,CART,REQUESTS,ADMIN,ACTIVEUSERS} from '../constants';
 
 export const setuser = (data)=>{
     return{
@@ -59,6 +59,13 @@ export const setRequests = (data)=>{
 export const setAdmin = (data)=>{
     return{
         type:ADMIN,
+        data
+    }
+}
+
+export const setActive = (data)=>{
+    return{
+        type:ACTIVEUSERS,
         data
     }
 }

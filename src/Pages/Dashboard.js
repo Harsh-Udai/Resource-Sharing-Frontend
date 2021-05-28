@@ -43,9 +43,14 @@ const Dashboard = (props)=>{
         
     },[effe])
 
-    const updater=(res)=>{
+    const updater=(res,res1)=>{
         props.setAnimation(false);
         props.setCentral(res.data)
+        const emails = [];
+        res1.data.map((dat)=>{
+            emails.push(dat.email);
+        })
+        props.setActive(emails)
     }
     
 
@@ -63,9 +68,16 @@ const Dashboard = (props)=>{
                         'Authorization': `Bearer ${props.main.master_user.token}`
                     }
                 })
+
+                const res1 = await axios.post('http://localhost:5000/userAll',{
+                    headers:{
+                        'Authorization': `Bearer ${props.main.master_user.token}`
+                    }
+                })
+                
                 
                 setEffe1(1);
-                updater(res);
+                updater(res,res1);
                 
             }
             catch(e){

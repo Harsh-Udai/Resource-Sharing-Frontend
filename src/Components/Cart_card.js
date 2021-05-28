@@ -47,7 +47,7 @@ export default function MiddleDividers(props) {
   const [error,setError] = useState(false);
   useEffect(()=>{
     const abortController = new AbortController();
-    
+    console.log("hiii")
     if(hook===0){
         axios.post('http://localhost:5000/ResourceFind',{
             name:props.name,
@@ -59,6 +59,7 @@ export default function MiddleDividers(props) {
         }
         })
         .then((data)=>{
+          console.log(data)
             setHk(1);
             if(data.data.msg==='No'){
               setError(true);
@@ -78,7 +79,7 @@ export default function MiddleDividers(props) {
     return () => {
         abortController.abort();
     };
-})
+},[])
 
   const remove_Handle = ()=>{
     props.anim();
@@ -177,6 +178,8 @@ export default function MiddleDividers(props) {
   }
 
   return (
+    <>
+    {!error ? 
     <div className={classes.root}>
        {/* <Backdrop start={prog} /> */}
        {prog ?<div><LinearProgress /></div>:null }
@@ -215,6 +218,7 @@ export default function MiddleDividers(props) {
       </div>
       </div>
       <AlertD setter={props.setter} text={`Congratulations!. Now your request has been sent to the owner of Resource, Wait till Approval. Check the Requests Tab.`} image={alert1} start={oEr2} stop={stopper2} />
-    </div>
+    </div> : null}
+    </>
   );
 }
