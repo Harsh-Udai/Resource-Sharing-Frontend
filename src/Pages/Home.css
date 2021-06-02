@@ -5,7 +5,7 @@
 .main-part-1{
     text-align: center;
     font-size: 500%;
-    margin: 50px;
+    /* margin: 50px; */
     margin-bottom: -100px;
 }
 .main-part-ANIME{
@@ -109,6 +109,15 @@
         bottom: -80px;
     }
 }
+@media only screen and (max-width: 361px) {
+    
+    .main-part-1{
+        font-size: 400%;
+    }
+    .mobile_image-content{
+        width:350px;
+    }
+}
 
 .hook{
     transform: rotate(40deg);
@@ -121,4 +130,24 @@
     to{
         transform: translate(0px,10px) rotate(30deg);
     }
+}
+
+.custom-shape-divider-top-1622640947 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1622640947 svg {
+    position: relative;
+    display: block;
+    width: calc(136% + 1.3px);
+    height: 170px;
+}
+
+.custom-shape-divider-top-1622640947 .shape-fill {
+    fill: #FFFFFF;
 }

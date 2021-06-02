@@ -14,7 +14,7 @@
 .footer_home{
   margin-top: 1rem;
   padding: 75px;
-  position: relative;
+  /* position: relative; */
   text-align: center;
   background-image: url('../Assets/qwd83nc4xxf41.jpg');
   color:white;
@@ -24,7 +24,7 @@
   border-radius:10px;
 }
 .footer_home_card{
-  width:30%
+  width:400px;
 }
 .footer_home_flex{
   display:flex;

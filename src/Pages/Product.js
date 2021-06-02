@@ -127,7 +127,7 @@ const Product = (props)=>{
                 </div>
                 <br></br>
                 
-                <div className="font">
+                <div className="font font_D">
                     <h1>Details</h1>
                 </div>
 

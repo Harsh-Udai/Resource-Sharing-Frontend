@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navabr from '../Components/Navbar';
+import Navabr from '../Components/Navbar3';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import {Link} from 'react-router-dom';
 import Alert from '@material-ui/lab/Alert';
@@ -104,7 +104,13 @@ export default function Login(props){
             <div>
                 <Navabr />
             </div>
-            
+
+            {/* <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00cba9" fill-opacity="1" d="M0,32L80,58.7C160,85,320,139,480,144C640,149,800,107,960,112C1120,117,1280,171,1360,197.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
+            {/* <svg style={{marginTop:'-60px'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00cba9" fill-opacity="1" d="M0,288L80,266.7C160,245,320,203,480,202.7C640,203,800,245,960,250.7C1120,256,1280,224,1360,208L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
+            {/* <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00cba9" fill-opacity="1" d="M0,224L80,218.7C160,213,320,203,480,170.7C640,139,800,85,960,96C1120,107,1280,181,1360,218.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
+            {/* <svg style={{marginTop:'-70px'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#00cba9" fill-opacity="1" d="M0,96L80,128C160,160,320,224,480,213.3C640,203,800,117,960,106.7C1120,96,1280,160,1360,192L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
+           
+
             <div>
                 <div className="Login-text">
                     <div><LockOpenIcon fontSize="large" /></div> Signin 
@@ -128,12 +134,15 @@ export default function Login(props){
                                 <br></br>
                                 <input className="EmailPart" onChange={(e)=>passCh(e)} type="password"  required={true} ></input>
                                 <br></br>
-                                <br></br>
+                                <br></br> 
                             </div>
                             {emailErr ? <div style={{margin:'5px'}}><Alert severity="error">This is an error alert — check Email</Alert></div>:null}
                             {accountErr ? <div style={{margin:'5px'}}><Alert severity="error">This is an error alert — No Account Found!</Alert></div>:null}
                             {passwordErr ? <div style={{margin:'5px'}}><Alert severity="error">This is an error alert — check password</Alert></div>:null}
+                            <div style={{display:'flex',justifyContent:'center'}}>
                             <button  type="submit" onClick={(e)=>LogSubmit(e)} className="subButton">{prog ? <CircularProgress size={20} style={{color:'white',position:'relative',left:'-50px',top:'3px'}} />: null}{`Submit`}</button>
+
+                            </div>
                             <div className="endPart">
                                 <span style={{textAlign:'center',fontSize:'110%'}}>
                                     <p><Link to='/Reset' style={{textDecoration:'none', color:'#2E86C1'}}>Forgot Password? </Link></p>
@@ -142,10 +151,14 @@ export default function Login(props){
                                     <p>Don't have account? Create one <Link to='/Signup' style={{textDecoration:'none', color:'#2E86C1'}}>here</Link></p>
                                 </span>
                             </div>
+                            
                         </form>
+                        
                     </div>
+                     
                 </div>
             </div>
+                       
         </div>
     )
 }

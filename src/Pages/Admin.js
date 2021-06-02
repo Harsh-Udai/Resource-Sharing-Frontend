@@ -62,7 +62,7 @@ export default function Admin(props) {
 
 
             <div style={{display:'flex',justifyContent:'center',marginTop:'100px',marginBottom:'100px'}}>
-                <div style={{width:'800px'}}>
+                <div className="table_admin">
                     <Table data={senData} start={true} major={handleClicker} />
                 </div>
             </div> 

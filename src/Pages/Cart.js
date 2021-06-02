@@ -39,7 +39,7 @@ export default function Cart(props){
             })
             .then((data)=>{
                 setHk(1);
-                console.log(props);
+                
                 const uiO=[]
                 const yy = data.data.map((dat)=>{
                     if(props.main.master_user.active_users.includes(dat.resource_owner)){

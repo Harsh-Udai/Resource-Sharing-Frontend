@@ -9,6 +9,7 @@
     font-family: 'Lexend', sans-serif;
 }
 .page-setter{
+    text-align: center;
     padding-top: 50px;
     display: flex;
     justify-content: space-evenly;
@@ -22,7 +23,7 @@
         justify-content: center;
     }
 }
-
+ 
 .formMajor{
     margin-top: 100px;
 }
@@ -34,7 +35,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     width: 360px;
     background-color: #F2F3F4;
-    
+    text-align: left;
     padding: 20px;
     padding-left: 25px;
     border: 1px solid white;
@@ -103,3 +104,22 @@
     }
     
 }
+
+@media only screen and (max-width: 361px) {
+    
+    .mobile_image-contentSignup{
+        width:300px;
+    }
+    .formPart{
+        width:300px;
+    }
+    .emailField{
+        width:280px;
+        margin-left: -10px;
+    }
+    .submitButton{
+        width:300px;
+    }
+   
+}
+

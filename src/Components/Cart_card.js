@@ -47,7 +47,7 @@ export default function MiddleDividers(props) {
   const [error,setError] = useState(false);
   useEffect(()=>{
     const abortController = new AbortController();
-    console.log("hiii")
+    
     if(hook===0){
         axios.post('http://localhost:5000/ResourceFind',{
             name:props.name,
@@ -59,9 +59,13 @@ export default function MiddleDividers(props) {
         }
         })
         .then((data)=>{
-          console.log(data)
+          
             setHk(1);
-            if(data.data.msg==='No'){
+            if(data.data===""){
+              setError(true);
+              setProg(false);
+            }
+            else if(data.data.msg==='No'){
               setError(true);
             }
             else{
@@ -73,6 +77,7 @@ export default function MiddleDividers(props) {
             props.closer();
         })
         .catch((e)=>{
+            
             console.log(e);
         })
     }

@@ -15,7 +15,7 @@ const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
   {
     id: 'action',
-    label: 'action',
+    label: 'Action',
     minWidth: 170,
     align: 'left',
   },

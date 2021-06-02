@@ -51,8 +51,8 @@ export default function MiddleDividers(props) {
       <div className={classes.section3} >
         {props.approve==='NO' ? <div><Button color='primary'>Status : Pending</Button></div> : 
         <Button color={props.approve==='Accepted' ? 'primary' : 'secondary'}>Status : {props.approve==='Accepted' ? 'Accepted' : 'Rejected'} </Button>}
-        <div style={{display:'flex',justifyContent:'center',marginTop:'-40px',marginLeft:'30px'}}>
-          {props.approve==='Accepted' ?<img width="10%" alt="." src={Image1} /> :null}
+        <div style={{display:'flex',justifyContent:'center',marginTop:'-35px',marginLeft:'160px'}}>
+          {props.approve==='Accepted' ?<img width="30px" alt="." src={Image1} /> :null}
         </div>
       </div>
     </div>

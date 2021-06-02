@@ -11,14 +11,15 @@
 
 .resetText{
     margin-top: 70px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lexend', sans-serif;
     font-size: 200%;
+    font-weight: 500;
 }
 .resetText1{
     font-size: 110%;
 }
 .resetForm{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lexend', sans-serif;
     width: 360px;
     background-color: #F2F3F4;
     padding: 20px;
@@ -34,11 +35,35 @@
     border: 1.9px solid #E5E8E8;
     margin-top: 10px;
     font-size: 130%;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lexend', sans-serif;
 }
 .resetEmail:focus{
     outline: none !important;
     border: 1.6px solid #2E86C1;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lexend', sans-serif;
     font-size: 130%;
+}
+.alerter{
+    width:400px;
+}
+
+@media only screen and (max-width: 361px) {
+    
+    .resetForm{
+        width:310px;
+        text-align: left;
+    }
+    .resetEmail{
+        width:280px;
+    }
+    .alerter{
+        width:320px;
+    }
+    .resetMid{
+        text-align:center;
+    }
+    .alert_dis{
+        display: flex;
+        justify-self: center;
+    }
 }

@@ -23,7 +23,7 @@ export default function ResponsiveDialog() {
   return (
     <div ref={wrapper}>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Get Started
+        <span className="font1">Get Started</span>
       </Button>
       <Dialog
         ref={wrapper}

@@ -56,7 +56,7 @@ export default function Adm_login(props) {
                     <p className="font1" style={{fontSize:'220%'}}><span style={{backgroundColor:'#7DCEA0',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Enter Access Token</span></p>
                     <div style={{alignItems:'center',marginTop:'0px',marginBottom:'80px'}}>
                         <form onSubmit={admin_check}>
-                            <input type="password" onChange={(e)=>setDF(e.target.value)} style={{width:'400px'}} className="emailField" placeholder="Type here"></input>
+                            <input type="password" onChange={(e)=>setDF(e.target.value)}  className="emailField_admin"  placeholder="Type here"></input>
                             <br></br>
                             <button style={{width:'150px',border:'none'}} onClick={admin_check} className="submitButton">{prog ? <CircularProgress size={20} style={{color:'white',marginTop:'5px'}} />: "Login"}</button>
                         </form>

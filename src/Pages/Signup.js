@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../Components/Navbar';
+import Navbar from '../Components/Navbar3';
 import './Signup.css';
 import image1 from '../Assets/signup.svg';
 import Alert from '@material-ui/lab/Alert';
@@ -262,7 +262,7 @@ const Signup = ()=>{
                         <br></br>
                         <br></br>
                         <br></br> 
-                        <img src={image1} alt="alt" width="500px"></img>
+                        <img className="mobile_image-contentSignup" src={image1} alt="alt" width="450px"></img>
                         <div className="text-part">
                             <p>Sign up</p>
                         </div>
@@ -312,9 +312,9 @@ const Signup = ()=>{
                             {ServerError ? <div><br></br><Alert severity="error">Server Error</Alert></div>: null}
                             <button onClick={(e)=>formSubmit(e)} type="submit" className="submitButton">{progRess1 ? <CircularProgress size={20} style={{color:'white',position:'relative',left:'-50px',top:'3px'}} />: null}{buttonText}</button>
                             
-                        </form>
+                        </form> 
                         
-                        <div style={{marginLeft:'175px'}}>
+                        <div className="prog_mobile" style={{alignContent: 'center'}}>
                             {progRess ? <CircularProgressWithLabel value={progress} /> : <CircularProgress />}
                         </div>
                     </div>

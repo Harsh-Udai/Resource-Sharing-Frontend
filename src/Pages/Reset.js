@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Navbar from '../Components/Navbar';
+import Navbar from '../Components/Navbar3';
 import './Reset.css';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -183,9 +183,12 @@ const Reset = ()=>{
                                     }
                                     
                                 </div>
-                                {emailER ? <div style={{margin:'5px', width: '400px' }}><Alert severity="error">This is an error alert — No Account Found!</Alert></div>:null}
-                                {otpER ? <div style={{margin:'5px', width: '400px'}}><Alert severity="error">This is an error alert — Wrong OTP!</Alert></div>:null}
-                                {passER ? <div style={{margin:'5px', width: '400px'}}><Alert severity="error">This is an error alert — Check Password!</Alert></div>:null}
+                                <div className="alert_dis">
+                                {emailER ? <div className="alerter" style={{margin:'5px' }}><Alert severity="error">This is an error alert — No Account Found!</Alert></div>:null}
+                                {otpER ? <div className="alerter" style={{margin:'5px'}}><Alert severity="error">This is an error alert — Wrong OTP!</Alert></div>:null}
+                                {passER ? <div className="alerter" style={{margin:'5px'}}><Alert severity="error">This is an error alert — Check Password!</Alert></div>:null}
+                                </div>
+                                
                                 <button type="submit" onClick={(e)=>submitReset(e)} className="submitButton">{prog ? <CircularProgress size={20} style={{color:'white',position:'relative',left:'-50px',top:'3px'}} />: null}Submit</button>
                             
                             </form>
