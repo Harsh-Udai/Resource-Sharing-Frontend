@@ -22,7 +22,7 @@ export default function Adm_login(props) {
         
         e.preventDefault();
         setProg(true);
-        axios.post('http://localhost:5000/auth/admin',{
+        axios.post('https://rsp-backend.herokuapp.com/auth/admin',{
             token: data_f
         })
         .then((data)=>{

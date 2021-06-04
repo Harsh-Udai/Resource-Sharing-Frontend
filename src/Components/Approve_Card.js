@@ -35,9 +35,10 @@ export default function MiddleDividers(props) {
   
   const classes = useStyles();
   const [oEr2,setOE2] = useState(false);
+  
   const handleCancel = ()=>{
     
-    axios.post('http://localhost:5000/request/AppCancel',{
+    axios.post('https://rsp-backend.herokuapp.com/request/AppCancel',{
       email:props.main.master_user.email,
       resource_name:props.name,
       email2:props.email,
@@ -58,8 +59,8 @@ export default function MiddleDividers(props) {
   }
 
   const handleApprove = ()=>{
-    console.log('Hello World');
-    axios.post('http://localhost:5000/request/AppApprove',{
+    
+    axios.post('https://rsp-backend.herokuapp.com/request/AppApprove',{
       email:props.main.master_user.email,
       resource_name:props.name,
       email2:props.email,
@@ -70,7 +71,7 @@ export default function MiddleDividers(props) {
       }
     })
     .then((data)=>{
-      console.log(data);
+      
       setOE2(true);
       // props.change();
     })

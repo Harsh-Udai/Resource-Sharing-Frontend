@@ -148,7 +148,7 @@ export default function Notify(props){
                 Date: today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear() +'??'+formatAMPM(new Date())
             });
             
-            axios.get('http://localhost:5000/MSG')
+            axios.get('https://rsp-backend.herokuapp.com/MSG')
             .then((data)=>{
               setData(data.data);
             })
@@ -168,7 +168,7 @@ export default function Notify(props){
     
     useEffect(()=>{
         const abortController = new AbortController();
-        axios.get('http://localhost:5000/MSG')
+        axios.get('https://rsp-backend.herokuapp.com/MSG')
         .then((data)=>{
           setData(data.data);
         })

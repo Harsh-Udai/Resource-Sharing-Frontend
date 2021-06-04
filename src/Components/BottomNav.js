@@ -30,7 +30,7 @@ export default function SimpleBottomNavigation(props) {
   const [value, setValue] = React.useState('');
   const add_cart = ()=>{
       
-      axios.post('http://localhost:5000/cart/add',{
+      axios.post('https://rsp-backend.herokuapp.com/cart/add',{
         self_user:props.main.master_user.email,
         resource_name:props.cart_data.re_name,
         resource_owner:props.cart_data.owner_email,

@@ -32,7 +32,7 @@ export default function Cart(props){
     const [prog,setProg] = useState(true);
     const dataR = ()=>{
         setProg(true)
-        axios.post('http://localhost:5000/request/data',{
+        axios.post('https://rsp-backend.herokuapp.com/request/data',{
             email:props.main.master_user.email
         },{
             headers:{

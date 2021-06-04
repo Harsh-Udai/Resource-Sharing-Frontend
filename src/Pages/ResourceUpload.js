@@ -323,7 +323,7 @@ const ResourceUpload = (props)=>{
                 'content-type': 'multipart/form-data'
             }
           };
-          axios.post("http://localhost:5000/uploadResource",formData,config)
+          axios.post("https://rsp-backend.herokuapp.com/uploadResource",formData,config)
               .then((response) => {
                   setS(true)
                   setSuccess(true);

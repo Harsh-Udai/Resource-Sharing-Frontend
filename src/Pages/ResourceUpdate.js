@@ -146,7 +146,7 @@ const ResourceUpload = (props)=>{
     const abortController = new AbortController();
       
     if(cc===0){
-      axios.post('http://localhost:5000/ResourceFindUpdate',({
+      axios.post('https://rsp-backend.herokuapp.com/ResourceFindUpdate',({
         Name:props.Name,
         Email:props.main.master_user.email,
         unique_id:props.unique_id
@@ -404,7 +404,7 @@ const ResourceUpload = (props)=>{
                 'Authorization': `Bearer ${props.main.master_user.token}`
             }
           };
-          axios.post("http://localhost:5000/ResourceFindUpdateRefresh",formData,config)
+          axios.post("https://rsp-backend.herokuapp.com/ResourceFindUpdateRefresh",formData,config)
               .then((response) => {
                   setS(true)
                   setSuccess(true);

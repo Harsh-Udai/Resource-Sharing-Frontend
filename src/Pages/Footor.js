@@ -3,7 +3,7 @@ import './Footor.css';
 
 const Footer = () => (
   <div className="footer">
-    <p>Use at it Fullest</p>
+    <p>Use at its Fullest</p>
   </div>
 );
 

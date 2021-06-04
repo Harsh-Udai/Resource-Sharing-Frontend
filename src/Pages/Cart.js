@@ -30,7 +30,7 @@ export default function Cart(props){
 
     const setter = ()=>{
         setRD([]);
-        axios.post('http://localhost:5000/cart/data',{
+        axios.post('https://rsp-backend.herokuapp.com/cart/data',{
                 email:props.main.master_user.email
             },{
                 headers:{

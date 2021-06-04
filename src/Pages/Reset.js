@@ -59,7 +59,7 @@ const Reset = ()=>{
         setProg(true)
         if(count===0){
 
-            axios.post('http://localhost:5000/Reset/email',{
+            axios.post('https://rsp-backend.herokuapp.com/Reset/email',{
                 email
             })
             .then((data)=>{
@@ -107,7 +107,7 @@ const Reset = ()=>{
                 
                 setpassER(false);
 
-                axios.post('http://localhost:5000/Reset/Update',{
+                axios.post('https://rsp-backend.herokuapp.com/Reset/Update',{
                     email,
                     newPass
                 })

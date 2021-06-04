@@ -22,7 +22,7 @@ export default function Admin(props) {
         setaler(false);
         
         if(val==='agree'){
-            axios.post('http://localhost:5000/auth/accountR',{
+            axios.post('https://rsp-backend.herokuapp.com/auth/accountR',{
                 email: data.email,
                 token:data.init_token
             })

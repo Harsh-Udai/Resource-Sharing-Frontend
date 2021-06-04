@@ -23,7 +23,7 @@ const Dashboard = (props)=>{
             
             const setData = async()=>{
                 try{
-                    const res = await axios.get('http://localhost:5000/retriveResource')
+                    const res = await axios.get('https://rsp-backend.herokuapp.com/retriveResource')
                     
                     setImage(res.data);
                     setProg(false);
@@ -61,7 +61,7 @@ const Dashboard = (props)=>{
         
         const setProfile = async()=>{
             try{
-                const res = await axios.post('http://localhost:5000/Profile',{
+                const res = await axios.post('https://rsp-backend.herokuapp.com/Profile',{
                     token:props.main.master_user.token
                 },{
                     headers:{
@@ -69,7 +69,7 @@ const Dashboard = (props)=>{
                     }
                 })
 
-                const res1 = await axios.post('http://localhost:5000/userAll',{
+                const res1 = await axios.post('https://rsp-backend.herokuapp.com/userAll',{
                     headers:{
                         'Authorization': `Bearer ${props.main.master_user.token}`
                     }

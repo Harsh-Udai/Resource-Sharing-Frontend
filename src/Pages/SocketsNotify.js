@@ -1,5 +1,5 @@
 import SocketIO from 'socket.io-client';
-const uri = 'http://localhost:5000';
+const uri = 'https://rsp-backend.herokuapp.com/';
 const socket = SocketIO(uri,{
     withCredentials: true,
 });

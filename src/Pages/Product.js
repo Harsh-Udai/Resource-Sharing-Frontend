@@ -76,7 +76,7 @@ const Product = (props)=>{
         window.scrollTo(0,0)
         const abortController = new AbortController();
         if(effP===0){
-            axios.post('http://localhost:5000/ResourceFind',{
+            axios.post('https://rsp-backend.herokuapp.com/ResourceFind',{
                 token:props.main.master_user.token,
                 name:props.match.params.id,
                 email:props.location.state.email,

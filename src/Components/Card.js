@@ -64,7 +64,7 @@ export default function RecipeReviewCard(props) {
   };
   const liker=(et)=>{
       props.back(true)
-      axios.post('http://localhost:5000/Resource/interest',{
+      axios.post('https://rsp-backend.herokuapp.com/Resource/interest',{
                 token:props.main.master_user.token,
                 likes:'+1',
                 name:et,

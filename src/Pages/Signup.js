@@ -150,11 +150,11 @@ const Signup = ()=>{
             if(count===0){
                 
                 setProg1(true)
-                axios.post('http://localhost:5000/Signup/email',{
+                axios.post('https://rsp-backend.herokuapp.com/Signup/email',{
                     email: email
                 })
                 .then((data)=>{
-                    
+                    console.log(data)
                     if(data.data==='Already'){
                         setAlready(true);
                         setProg1(false)
@@ -226,7 +226,7 @@ const Signup = ()=>{
                     setProgress(100);
                     setProg(false);
                     
-                    axios.post('http://localhost:5000/users/create',{
+                    axios.post('https://rsp-backend.herokuapp.com/users/create',{
                         name: username,
                         email: email,
                         password: password
