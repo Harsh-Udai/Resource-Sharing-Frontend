@@ -22,7 +22,7 @@ const Entry = (props)=>{
         if(hmm1!==null){
             const kk = {name:decode(hmm1.milestone),init_token:hmm1.milestone1,_id:hmm1.milestone2}
             props.setuser(kk)
-            props.setNotifications({socket:SocketIO('https://rsp-backend.herokuapp.com/',{withCredentials: true})});
+            props.setNotifications({socket:SocketIO('https://rsp-backend.herokuapp.com',{withCredentials: true})});
             return <Redirect to='/UI' />
         }
         else{
