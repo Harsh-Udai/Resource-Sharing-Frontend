@@ -23,10 +23,10 @@ const Entry = (props)=>{
             const kk = {name:decode(hmm1.milestone),init_token:hmm1.milestone1,_id:hmm1.milestone2}
             props.setuser(kk)
             props.setNotifications({socket:SocketIO('https://rsp-backend.herokuapp.com/',{withCredentials: true})});
-            return <Redirect to='https://resourcesharingio.netlify.app/UI' />
+            return <Redirect to='/UI' />
         }
         else{
-            return <Redirect push to='https://resourcesharingio.netlify.app/UI/Login' />
+            return <Redirect push to='/Login' />
         }
     }
     
