@@ -104,7 +104,7 @@ export default function Messenger(props) {
     const scrollRef = useRef();
 
     useEffect(()=>{
-        socket.current = io("https://nameless-ridge-85618.herokuapp.com/");
+        socket.current = io("ws://localhost:5000/");
         console.log(socket);
         socket.current.on("getMessage",data=>{
             
