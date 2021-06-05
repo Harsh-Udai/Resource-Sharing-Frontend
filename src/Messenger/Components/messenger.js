@@ -104,7 +104,8 @@ export default function Messenger(props) {
     const scrollRef = useRef();
 
     useEffect(()=>{
-        socket.current = io("ws://localhost:8900");
+        socket.current = io("ws://nameless-ridge-85618.herokuapp.com");
+        console.log(socket);
         socket.current.on("getMessage",data=>{
             
             setArrivalMessage({
@@ -144,7 +145,7 @@ export default function Messenger(props) {
         setColor1("");
         setColor2("color");
         try{
-            const res = await axios.get('http://localhost:5000/api/messages/users');
+            const res = await axios.get('https://rsp-backend.herokuapp.com/api/messages/users');
             
             const newD = res.data.filter((dt)=>{
                 return dt._id!==user._id
@@ -163,7 +164,7 @@ export default function Messenger(props) {
         setProg1(true)
         const getConversations = async()=>{
             try{
-                const res = await axios.get('http://localhost:5000/api/conversations/'+user._id);
+                const res = await axios.get('https://rsp-backend.herokuapp.com/api/conversations/'+user._id);
                 setProg1(false)
                 setConversations(res.data);
             }
@@ -189,7 +190,7 @@ export default function Messenger(props) {
         const getMessages = async()=>{
             try{
                 
-                const res = await axios.get("http://localhost:5000/api/messages/"+currentChat?._id);
+                const res = await axios.get("https://rsp-backend.herokuapp.com/api/messages/"+currentChat?._id);
                 
                 setMessages(res.data);
                 setProg(false);
@@ -207,7 +208,7 @@ export default function Messenger(props) {
         setProg1(true);
         const getConversations = async()=>{
             try{
-                const res = await axios.get('http://localhost:5000/api/conversations/'+user._id);
+                const res = await axios.get('https://rsp-backend.herokuapp.com/api/conversations/'+user._id);
                 
                 setProg1(false)
                 setConversations(res.data);
@@ -245,7 +246,7 @@ export default function Messenger(props) {
                 })
         
                 try{
-                    const res = await axios.post('http://localhost:5000/api/messages',message);
+                    const res = await axios.post('https://rsp-backend.herokuapp.com/api/messages',message);
                     
                     setMessages([...messages,res.data]);
                 }
@@ -299,7 +300,7 @@ export default function Messenger(props) {
             };
     
             try{
-                const res = await axios.post('http://localhost:5000/api/conversations',newCov);
+                const res = await axios.post('https://rsp-backend.herokuapp.com/api/conversations',newCov);
                 
                 setConversations([...conversations,res.data])
                 setStateSnack1({

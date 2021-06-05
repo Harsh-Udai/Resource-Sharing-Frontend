@@ -26,7 +26,7 @@ export default function InsetDividers({conversation,currentUser}) {
     
       const getUser = async()=>{
         try{
-            const res = await axios.get("http://localhost:5000/api/messages/findUser/"+ friendId);
+            const res = await axios.get("https://rsp-backend.herokuapp.com/api/messages/findUser/"+ friendId);
             setUser(res.data);
             setZero(1);
         }

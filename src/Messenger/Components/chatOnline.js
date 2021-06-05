@@ -55,7 +55,7 @@ export default function InsetDividers(props) {
       const getUser = async()=>{
         try{
             
-            const res = await axios.get("http://localhost:5000/api/messages/findUser/"+ props.data.userId);
+            const res = await axios.get("https://rsp-backend.herokuapp.com/api/messages/findUser/"+ props.data.userId);
             setUser(res.data);
             setZero(1);
         }
