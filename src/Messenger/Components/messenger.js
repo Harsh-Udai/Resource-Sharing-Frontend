@@ -105,7 +105,7 @@ export default function Messenger(props) {
 
     useEffect(()=>{
         socket.current = io("ws://nameless-ridge-85618.herokuapp.com/");
-        console.log(socket);
+        // console.log(socket);
         socket.current.on("getMessage",data=>{
             
             setArrivalMessage({
@@ -128,7 +128,7 @@ export default function Messenger(props) {
         
         socket.current.emit('addUser',user._id);
         socket.current.on('getUsers',users=>{
-            console.log('users',users);
+            // console.log('users',users);
             setOnlineUsers(users)
         })
 
