@@ -144,7 +144,7 @@ const Profile = (props)=>{
                     </div>
                     
                     <div className="EmailTag">
-                        <Chip label={props.main.master_user.email} color="primary" avatar={<Avatar>{props.main.master_user.name.split(" ")[0].charAt(0)}</Avatar>} />
+                        <Chip label={<span className="font1">{props.main.master_user.email}</span>} color="primary" avatar={<Avatar>{<span className="font1">{props.main.master_user.name.split(" ")[0].charAt(0)}</span>}</Avatar>} />
                     </div>
                     <div className="categ">
                         <p>Categories</p>
@@ -153,7 +153,7 @@ const Profile = (props)=>{
                             props.main.master_user.class.map((dt,index)=>{
                                 
                                 return(
-                                    <Chip style={{marginRight:'5px',marginBottom:'3px'}} color="primary" key={index} label={dt} size="small" />
+                                    <Chip style={{marginRight:'5px',marginBottom:'3px'}} color="primary" key={index} label={<span className="font1">{dt}</span>} size="small" />
                 
                                 )
                             })
@@ -171,9 +171,7 @@ const Profile = (props)=>{
                     <h1>Handle Resources!</h1>
                 </div>
                 <div className="cards">
-                    {prog ? <CircularProgress />:null}
-                </div>
-                <div className="cards">
+                    {prog ?<div style={{marginBottom:'100px'}}> <CircularProgress /> </div>: <div className="cards">
                     
                     {dataAr.length>0 ? dataAr.map((img,index)=>{
                                
@@ -186,7 +184,9 @@ const Profile = (props)=>{
                            }) : <div className="sect-2">
                                     <h1>No Items!</h1>
                                 </div>}
+                </div>}
                 </div>
+               
             </div>
             <Backdrop className={classes.backdrop} open={open} >
                 <CircularProgress color="inherit" />

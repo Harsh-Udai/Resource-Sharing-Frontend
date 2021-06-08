@@ -408,7 +408,7 @@ export default function Messenger(props) {
                                         <SendRoundedIcon />
                                 </Fab> 
                             </form>
-                        </div></>:<span className="noConversationText" style={{backgroundColor:'#7DCEA0',marginBottom:'50px',color:'white',fontSize:'150%'}}>Open a conversation to start a chat</span>}
+                        </div></>:<span className="noConversationText" style={{backgroundColor:'#7DCEA0',marginBottom:'50px',color:'white',fontSize:'150%',paddingLeft:'5px',paddingRight:'5px'}}>Open a conversation to start a chat</span>}
                     </div>
                     
                         

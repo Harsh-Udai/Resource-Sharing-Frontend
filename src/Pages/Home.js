@@ -43,7 +43,7 @@ const Home = (props) => {
                     
                     <div>
                         <div className="text-part-2">
-                            <p style={{textAlign:'center'}}>A place where you can<br></br> <span style={{backgroundColor:'#7DCEA0'}}>Find,</span> <span style={{backgroundColor:'#F5B041'}}>Borrow</span> & <span style={{backgroundColor:'#85C1E9'}}>Upload</span> your Resources</p>
+                            <p style={{textAlign:'center'}}>A place where you can<br></br> <span style={{backgroundColor:'#7DCEA0',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Find,</span> <span style={{backgroundColor:'#F5B041',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Borrow</span> & <span style={{backgroundColor:'#85C1E9',color:'white',paddingLeft:'5px',paddingRight:'5px'}}>Upload</span> your Resources</p>
                             
                         </div>
                         
