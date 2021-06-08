@@ -140,7 +140,7 @@ export default function Notify(props){
         }
         else{
             setBE(false);
-            setData([...data,name]);
+            
             props.main.master_user.socket.emit('client',{
             
                 Name:props.main.master_user.name,
