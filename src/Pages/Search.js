@@ -65,7 +65,7 @@ const Search = ()=>{
                                 return(
                                     <div key={index} style={{margin:'50px',width:'300px',height:'500px'}}>
                                         
-                                        <Card search={true} class={img.classification} unique_id={img.unique_id} date={new Date(img.createdAt).toString()} image={img.image} tag={img.owner.charAt(0)} name={img.resource_Name} desc={img.resource_Description} />
+                                        <Card search={true} class={img.classification} email={img.email} unique_id={img.unique_id} date={new Date(img.createdAt).toString()} image={img.image} tag={img.owner.charAt(0)} name={img.resource_Name} desc={img.resource_Description} />
                                     </div>                                    
                                 )
                             })}
