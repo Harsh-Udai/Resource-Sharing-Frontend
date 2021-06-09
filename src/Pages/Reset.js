@@ -102,7 +102,7 @@ const Reset = ()=>{
         }
 
         if(count===2){
-            console.log(newPass);
+            
             if(newPass.length > 7){
                 
                 setpassER(false);
@@ -112,7 +112,7 @@ const Reset = ()=>{
                     newPass
                 })
                 .then((data)=>{
-                    console.log(data);
+                    
                     if(data.data==='Done'){
                         setState({...state,open:true});
                         setProg(false);

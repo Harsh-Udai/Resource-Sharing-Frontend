@@ -76,7 +76,7 @@ const Product = (props)=>{
         window.scrollTo(0,0)
         const abortController = new AbortController();
         if(effP===0){
-            console.log(props);
+            
             axios.post('https://rsp-backend.herokuapp.com/ResourceFind',{
                 token:props.main.master_user.token,
                 name:props.match.params.id,
@@ -88,7 +88,7 @@ const Product = (props)=>{
                 }
             })
             .then((data)=>{
-                console.log(data);
+                
                 setEP(1);
                 setSold(data.data.sold);
                 setUK(data.data.unique_id)

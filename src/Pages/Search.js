@@ -16,8 +16,9 @@ const Search = ()=>{
     }
     const SearchF = (e)=>{
         e.preventDefault();
-        
+        setError(false);
         setStart(true);
+        setImage([])
         axios.post('https://rsp-backend.herokuapp.com/FindResource',({
             find:inputd
         }))

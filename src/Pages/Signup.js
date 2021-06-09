@@ -154,7 +154,7 @@ const Signup = ()=>{
                     email: email
                 })
                 .then((data)=>{
-                    console.log(data)
+                    
                     if(data.data==='Already'){
                         setAlready(true);
                         setProg1(false)

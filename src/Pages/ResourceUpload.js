@@ -278,7 +278,7 @@ const ResourceUpload = (props)=>{
             setIMG(true);
           }
           else{
-            console.log("added");
+            
             setMsg("Image Added")
             setIMG(false);
             setImage(e.target.files[0])

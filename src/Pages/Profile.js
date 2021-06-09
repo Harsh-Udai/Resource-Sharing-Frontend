@@ -90,7 +90,7 @@ const Profile = (props)=>{
         })
         .then((data)=>{
             
-            console.log(data)
+            
             setArr(data.data);
             setCount(data.data.length);
             setOpen(false);
