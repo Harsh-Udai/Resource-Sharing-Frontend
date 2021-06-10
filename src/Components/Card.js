@@ -80,8 +80,7 @@ export default function RecipeReviewCard(props) {
       })
       .then((data)=>{
           
-          // console.log(data);
-          // console.log(data.data,typeof(data.data))
+         
           if(data.data===0){
             setcountAPI(countAPI-1);
             
