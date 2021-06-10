@@ -24,9 +24,9 @@ const Dashboard = (props)=>{
             const setData = async()=>{
                 try{
                     const res = await axios.get('https://rsp-backend.herokuapp.com/retriveResource')
-                    
-                    setImage(res.data);
                     setProg(false);
+                    setImage(res.data);
+                    
                     setEffe(1);
                 }
                 catch(e){

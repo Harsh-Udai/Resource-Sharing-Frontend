@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
         
       },
       [theme.breakpoints.between(0,600)]: {
-        width: '40ch',
+        width: '38ch',
         marginTop:'20px'
       },
   },
