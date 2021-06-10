@@ -1,10 +1,52 @@
 import React,{useState} from 'react';
 import './Search.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Snackbar from '@material-ui/core/Snackbar';
+import Fade from '@material-ui/core/Fade';
+import Select from '@material-ui/core/Select';
 import Card from '../Components/Card';
 import axios from 'axios';
 
+
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+      width: '320px',
+      [theme.breakpoints.between(0,400)]: {
+        width: '220px',
+      },
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
+    },
+  }));
+
+
+
 const Search = ()=>{
+    const classes = useStyles();
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+
+    const [stateSnack, setStateSnack] = React.useState({
+        open: false,
+        Transition: Fade,
+    });
+
+    const handleClose = () => {
+        setStateSnack({
+        ...stateSnack,
+        open: false,
+    });
+    };
 
     const [inputd,setInput] = useState('');
     const [image,setImage] = useState([]);
@@ -16,27 +58,50 @@ const Search = ()=>{
     }
     const SearchF = (e)=>{
         e.preventDefault();
-        setError(false);
-        setStart(true);
-        setImage([])
-        axios.post('https://rsp-backend.herokuapp.com/FindResource',({
-            find:inputd
-        }))
-        .then((data)=>{
+
+        if(age===''){
             
-            setStart(false);
-            if(data.data==='NO'){
-                setError(true);
-            }
-            else{
-                setError(false);
-                setImage(data.data)
-            }
+            setStateSnack({
+                ...stateSnack,
+                open: true,
+            });
+        }
+        else{
             
-        })
-        .catch((e)=>{
-            console.log(e);
-        })
+            setStateSnack({
+                ...stateSnack,
+                open: false,
+            });
+
+
+            setError(false);
+            setStart(true);
+            setImage([])
+            axios.post('https://rsp-backend.herokuapp.com/FindResource',({
+                find:inputd,
+                categ: age
+            }))
+            .then((data)=>{
+                console.log(data)
+                setStart(false);
+                if(data.data==='NO'){
+                    setError(true);
+                }
+                else{
+                    setError(false);
+                    setImage(data.data)
+                }
+                
+            })
+            .catch((e)=>{
+                console.log(e);
+            })
+
+
+        }
+
+       
+       
     }
 
     return(
@@ -47,6 +112,24 @@ const Search = ()=>{
             </div>
             <div className="inputS">
                     <form>
+                        <span style={{display:'flex',justifyContent:'center'}}>
+                            <FormControl variant="outlined" className={classes.formControl}>
+                                <InputLabel id="demo-simple-select-outlined-label">Select</InputLabel>
+                                <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={age}
+                                onChange={handleChange}
+                                label="Age"
+                                >
+                                
+                                <MenuItem value={'Resource'}>Resource Name</MenuItem>
+                                <MenuItem value={'Owner'}>Owner Name</MenuItem>
+                                <MenuItem value={'Category'}>Category</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </span>
+                    <br></br>
                     <input className="inputTS" onChange={(e)=>inputS(e)} placeholder="Search" type="text" ></input> <input onClick={(e)=>SearchF(e)} className="inputTS1" type="submit"></input>
                     </form>
             </div>
@@ -74,6 +157,16 @@ const Search = ()=>{
                 : null}
                 </div>
             </div>
+            <Snackbar
+                open={stateSnack.open}
+                onClose={handleClose}
+                autoHideDuration={5000}
+                TransitionComponent={stateSnack.Transition}
+                message="Select a Category first!"
+                key={stateSnack.Transition}
+            />
+
+
         </div>
     )
 }
